@@ -1,0 +1,14 @@
+[data-icon] {
+	display: inline-block;
+	vertical-align: middle;
+	width: 24px;
+	height: 24px;
+	background: 100% center no-repeat;
+	background-size: 100%;
+}
+[data-icon="home"] { background-image: url(../img/icons/home.png); }
+[data-icon="tl"] { background-image: url(../img/icons/tl.png); }
+[data-icon="time"] { background-image: url(../img/icons/time.png); }
+[data-icon="filter"] { background-image: url(../img/icons/filter.png); }
+[data-icon="grid"] { background-image: url(../img/icons/grid.png); }
+[data-icon="list"] { background-image: url(../img/icons/list.png); }

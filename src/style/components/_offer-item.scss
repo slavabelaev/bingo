@@ -1,0 +1,108 @@
+ul.list-of-offers {
+	list-style: none;
+	padding-left: 0;
+	margin-bottom: 60px;
+}
+
+.offer-item {
+	position: relative;
+	min-height: 230px;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 8px;
+	border-radius: 2px;
+	background-size: cover;
+	background-position: center;
+}
+.offer-item>figcaption {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.offer-item__title {
+	position: absolute;
+	top: 45px;
+	left: 28px;
+	color: #e7e4ee;
+	font-size: 1.4375rem;
+	line-height: 1;
+}
+.offer-item__total-reward {
+	position: absolute;
+	top: 50px;
+	right: 15px;
+	color: #ecc50e;
+	line-height: 1;
+}
+.offer-item__total-reward:before {
+	content: "Toplam Ödül : ";
+	color: #e7e4ee;
+}
+.offer-item__price {
+	position: absolute;
+	display: inline-block;
+	font-size: 1.25rem;
+	color: #ecc50e;
+	padding: 10px 5px;
+	border-radius: 2px;
+	left: 28px;
+	top: 80px;
+	background-color: #142627;
+}
+.offer-item__price-list {
+	display: flex;
+	position: absolute;
+	right: 0;
+	left: 20px;
+	bottom: 0;
+	list-style: none;
+	font-size: .875rem;
+	background-color: rgba(13, 27, 27, .7);
+	color: #e7e4ee;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 6px 0 2px 0;
+}
+.offer-item__price-list>li {
+	position: relative;
+	padding: 10px 20px;
+	flex: 1;
+}
+.offer-item__price-list>li:not(:last-child):before {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 15px;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	border-right: 1px solid rgba(255,255,255,.2);
+}
+
+@media (max-width: 991px) {
+	.offer-item__price-list {
+		left: 0;
+		padding: 0;
+		border-radius: 0 0 2px 2px;
+	}
+	.offer-item__price-list>li {
+		padding: 10px;
+		text-align: center;
+	}
+	.offer-item__title {
+		top: 15px;
+	}
+	.offer-item__total-reward {
+		left: 28px;
+		right: initial;
+	}
+}
+
+@media (max-width: 767px) {
+	ul.list-of-offers {
+		margin-bottom: 20px;
+	}
+}

@@ -1,0 +1,76 @@
+#filter-bar {
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	background-color: #235759;
+	padding: 15px;
+	margin-bottom: 40px;
+}
+#filter-bar .form-group,
+#filter-bar .btn {
+	margin-right: 4px;
+	margin-left: 4px;
+}
+#filter-by-tags>.btn,
+#filter-bar>div {
+	flex: 1;
+}
+#filter-bar>div {
+	margin-bottom: 5px;
+}
+div#filter-view {
+	flex: initial;
+}
+#filter-bar .form-control,
+#filter-bar .btn {
+	border-radius: 3px;
+	background-color: #1e484a;
+	border-color: #1e484a;
+	color: #e2f0f0;
+}
+#filter-bar .form-group {
+	max-width: 257px;
+	min-width: 150px;
+}
+
+@media (min-width: 1300px) {
+	#filter-bar {
+		padding: 15px 32px 15px 100px;
+	}
+	#filter-bar:before {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 40px;
+		top: 0;
+		bottom: 0;
+		height: 28px;
+		width: 28px;
+		margin: auto;
+		background: url(/img/icons/filter.png) no-repeat;
+		background-size: 24px;
+		opacity: .6;
+	}
+}
+
+@media (max-width: 767px) {
+	#filter-bar {
+		margin-bottom: 20px;
+		flex-direction: column;
+	}
+	#filter-view {
+		justify-content: center;
+		order: 1;
+	}
+	div#filter-by-tags {
+		flex-wrap: wrap;
+		margin-bottom: 0;
+	}
+	#filter-by-tags>.btn {
+		margin-bottom: 5px;
+	}
+	#filter-bar .form-group {
+		max-width: initial;
+		width: initial;
+	}
+}

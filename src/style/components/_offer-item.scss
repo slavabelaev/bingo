@@ -105,4 +105,13 @@ ul.list-of-offers {
 	ul.list-of-offers {
 		margin-bottom: 20px;
 	}
+
+	ul.list-of-offers.row {
+		flex-wrap: nowrap;
+		overflow-x: scroll;
+	}
+
+	ul.list-of-offers.row>li {
+		min-width: calc(100vw - 24px);
+	}
 }

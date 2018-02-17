@@ -34,3 +34,8 @@
 		z-index: 0;
 	}
 }
+@media (max-width: 767px) {
+	#info-bar {
+		display: none;
+	}
+}

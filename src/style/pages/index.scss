@@ -11,10 +11,16 @@
 	padding-bottom: 24px;
 	text-align: center;
 }
-
+#carousel-wrapper {
+	filter: contrast(115%);
+}
 #carousel-wrapper .carousel-item .btn {
 	min-width: 275px;
 	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+#carousel-wrapper .carousel-item__content {
+	padding-left: 3px;
 }
 
 @media (min-width: 1300px) {

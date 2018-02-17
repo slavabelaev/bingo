@@ -34,16 +34,21 @@
 #carousel .carousel-item.active {
 	background-position-y: 30px;
 }
-
 @media (min-width: 768px) {
 	#carousel .carousel-item {
 		background-repeat: no-repeat;
-		background-position: 90% -600%;
+		background-position: 100% -600%;
 		background-image: url(/img/pages/index/carousel/carousel-item_1.png);
-		background-size: auto 120%;
+		background-size: auto 100%;
 		transition: .6s ease;
 	}
 	#carousel {
 		height: 630px;
+	}
+}
+@media (min-width: 992px) {
+	#carousel .carousel-item {
+		background-position-x: 90%;
+		background-size: auto 120%;
 	}
 }

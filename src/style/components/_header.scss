@@ -3,7 +3,8 @@
 	z-index: 1;
 }
 
-#header .feather {
+#info-bar__top .btn .feather,
+#header .nav-link .feather {
 	margin-right: 12px;
 }
 
@@ -41,6 +42,10 @@
 	min-width: 175px;
 }
 
+#info-bar__top .navbar-toggler {
+	background-color: #142627;
+	border-color: #142627;
+}
 
 @media (min-width: 992px) {
 	#info-bar__top__actions .btn:first-child {
@@ -49,6 +54,17 @@
 }
 
 @media (max-width: 767px) {
+	body {
+		padding-top: 115px;
+	}
+	#header {
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		z-index: 19;
+	}
+
 	#info-bar__top__actions>.btn:not(:last-child) {
 		margin-bottom: 5px;
 	}
@@ -57,5 +73,9 @@
 		display: flex;
 		justify-content: center;
 		width: 100%;
+	}
+
+	#main-navigation {
+		display: none;
 	}
 }

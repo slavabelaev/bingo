@@ -54,11 +54,8 @@
 }
 
 @media (max-width: 767px) {
-	body {
-		padding-top: 115px;
-	}
 	#header {
-		position: fixed;
+		position: sticky;
 		left: 0;
 		right: 0;
 		top: 0;

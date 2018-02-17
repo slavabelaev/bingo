@@ -112,6 +112,30 @@ ul.list-of-offers {
 	}
 
 	ul.list-of-offers.row>li {
-		min-width: calc(100vw - 24px);
+		min-width: calc(100vw - 26px);
 	}
+
+	ul.list-of-offers>li:first-child>.offer-item {
+		position: relative;
+	}
+	ul.list-of-offers>li:first-child>.offer-item:after {
+		content: "more rooms";
+		position: absolute;
+		display: flex;
+		align-items: center;
+		line-height: 1;
+		background-image: url(/img/icons/arrow-right.svg);
+		background-repeat: no-repeat;
+		background-position: 95% center;
+		background-size: 18px;
+		background-color: #ecc927;
+		padding: 8px 10px;
+		padding-right: 25px;
+		border-radius: 0 2px 0 2px;
+		right: 0;
+		top: 0;
+		z-index: 1;
+		font-size: 0.875rem;
+	}
+
 }

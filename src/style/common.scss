@@ -6,3 +6,11 @@
 @import "components/footer";
 
 
+.modal-title {
+  display: flex;
+  align-items: center;
+}
+
+.modal-title .feather {
+  margin-right: 12px;
+}

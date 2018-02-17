@@ -1,1 +1,1 @@
-console.log(jQuery);
+feather.replace();

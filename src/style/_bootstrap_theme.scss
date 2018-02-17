@@ -3,6 +3,22 @@
 .text-blue { color: $blue; }
 .text-green { color: $green; }
 
+
+.nav-link,
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal .alert {
+	display: flex;
+	align-items: center;
+}
+.modal .alert .feather {
+	margin-right: 12px;
+}
+
 .btn-primary {
 	color: #235759;
 }

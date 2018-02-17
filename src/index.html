@@ -8,14 +8,146 @@
 	<link rel="stylesheet" href="css/pages/index.css">
 </head>
 <body>
+
+<!-- Create account -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="loginModalLabel">Sign in to your account</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal" role="form" method="POST" action="/register">
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="login-email"><i data-feather="mail"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="Your email address" aria-label="Your email address" aria-describedby="login-email">
+					</div>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="login-password"><i data-feather="lock"></i></span>
+						</div>
+						<input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="login-password">
+					</div>
+				</form>
+				<div class="alert alert-danger" role="alert">
+					<i data-feather="alert-circle"></i> Error Message!
+				</div>
+			</div>
+			<div class="modal-footer justify-content-between">
+				<a href="/forgot-password">Forgot password?</a>
+				<button type="button" class="btn btn-primary" data-dismiss="modal"><i data-feather="log-in"></i>&nbsp;&nbsp;Login</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Create account -->
+
+<!-- Login -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="registerModalLabel">Creating Account</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal" role="form" method="POST" action="/register">
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="email"><i data-feather="mail"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="Your email address" aria-label="Your email address" aria-describedby="email">
+					</div>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="password"><i data-feather="lock"></i></span>
+						</div>
+						<input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password">
+					</div>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="user"><i data-feather="user"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="First name">
+						<input type="text" class="form-control" placeholder="Last name">
+					</div>
+
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="date"><i data-feather="calendar"></i></span>
+						</div>
+						<input type="date" class="form-control" placeholder="Birth date" aria-label="Birth date" aria-describedby="date">
+					</div>
+
+					<div class="row align-items-center mb-3">
+						<div class="col-3 pl-3">
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" id="sex_male" name="sex" checked class="custom-control-input">
+								<label class="custom-control-label" for="sex_male">Male</label>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" id="sex_female" name="sex" class="custom-control-input">
+								<label class="custom-control-label" for="sex_female">Female</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="user-location"><i data-feather="map-pin"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="Coutry">
+						<input type="text" class="form-control" placeholder="City">
+						<input type="text" class="form-control" placeholder="Postcode">
+					</div>
+
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="phone-number"><i data-feather="smartphone"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="Phone number" aria-label="Phone number" aria-describedby="phone-number">
+					</div>
+
+					<div class="custom-control custom-checkbox mb-3">
+						<input type="checkbox" class="custom-control-input" id="terms-and-policy">
+						<label class="custom-control-label" for="terms-and-policy">I am over 18 years old and have read and accept the
+							<a href="/terms-and-conditions">Terms and Conditions</a> and <a href="/privacy-policy" class="">Privacy Policy</a></label>
+					</div>
+				</form>
+				<div class="alert alert-danger" role="alert">
+					<i data-feather="alert-circle"></i> Error Message!
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal"><i data-feather="check"></i> Create Account</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Login -->
+
+
 	<header id="header">
 		<nav id="info-bar__top" class="navbar navbar-expand-lg navbar-light">
 			<div class="container d-flex">
 			  	<a class="navbar-brand" href="#"><img src="img/logo@2x.png" alt=""></a>
-			    <div id="info-bar__top__actions">
-			      <a class="btn btn-secondary">Nakit Para <span class="text-yellow">220. TL</span></a>
-			      <a class="btn btn-primary">Bonus Para <span class="text-green">3,320. TL</span></a>
+			    <div id="info-bar__top__actions" class="d-none">
+			      	<a class="btn btn-secondary">Nakit Para <span class="text-yellow">220. TL</span></a>
+			      	<a class="btn btn-primary">Bonus Para <span class="text-green">3,320. TL</span></a>
 			    </div>
+				<div id="authorization">
+					<a class="btn btn-secondary" data-toggle="modal" data-target="#loginModal"><i data-feather="log-in"></i> Login</a>
+					<a class="btn btn-primary" data-toggle="modal" data-target="#registerModal"><i data-feather="user-plus"></i> Create account</a>
+				</div>
 			</div>
 		</nav>
 		<nav id="main-navigation" class="navbar navbar-expand-md navbar-dark">
@@ -27,13 +159,13 @@
 			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			    <ul class="navbar-nav mr-auto">
 			      <li class="nav-item active">
-			        <a class="nav-link" href="#"><i data-icon="home"></i>Anasayfa <span class="sr-only">(current)</span></a>
+			        <a class="nav-link" href="#"><i data-feather="home"></i>Anasayfa <span class="sr-only">(current)</span></a>
 			      </li>
 			      <li class="nav-item">
 			        <a class="nav-link" href="#"><i data-icon="tl"></i>Nakit Islemleri</a>
 			      </li>
 			      <li class="nav-item">
-			        <a class="nav-link" href="#"><i data-icon="time"></i>Gecmis Islemler</a>
+			        <a class="nav-link" href="#"><i data-feather="clock"></i>Gecmis Islemler</a>
 			      </li>
 			    </ul>
 			  </div>
@@ -104,10 +236,10 @@
 				</div>
 			  	<div id="filter-view" class="btn-group btn-group-toggle" data-toggle="buttons">
 				  <label class="btn btn-secondary active">
-				    <input type="radio" name="options" id="option1" autocomplete="off" checked> <i data-icon="grid"></i>
+				    <input type="radio" name="options" id="option1" autocomplete="off" checked> <i data-feather="grid"></i>
 				  </label>
 				  <label class="btn btn-secondary">
-				    <input type="radio" name="options" id="option2" autocomplete="off"> <i data-icon="list"></i>
+				    <input type="radio" name="options" id="option2" autocomplete="off"> <i data-feather="list"></i>
 				  </label>
 				</div>
 			  	<div id="filter-by-tags" class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -393,6 +525,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
 	<script src="js/common.js"></script>
 </body>
 </html>

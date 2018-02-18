@@ -8,6 +8,16 @@
 	padding-right: 1rem;
 }
 
+#main-navigation .nav-link [data-icon] {
+	opacity: .75;
+}
+#main-navigation .nav-link:hover [data-icon] {
+	opacity: .9;
+}
+#main-navigation .nav-link.active [data-icon] {
+	opacity: 1;
+}
+
 #main-navigation .feather-user {
 	color: #fff;
 	margin-right: 6px;
@@ -16,6 +26,12 @@
 #user-sidenav {
 	display: flex;
 	justify-content: flex-end;
+}
+
+#user-navbar {
+	display: flex;
+	align-items: center;
+	padding-right: 6px;
 }
 
 #header .navbar-brand>img {
@@ -63,11 +79,6 @@
 		margin-right: 10px;
 	}
 }
-@media (max-width: 992px) {
-	#account-navbar-container .navbar-text {
-		display: none;
-	}
-}
 @media (max-width: 767px) {
 	#header {
 		position: sticky;
@@ -88,9 +99,6 @@
 		display: flex;
 		justify-content: center;
 		width: 100%;
-	}
-	#main-navigation .feather-user {
-		display: none;
 	}
 	#main-navigation>.container {
 		justify-content: flex-end;

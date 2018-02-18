@@ -22,6 +22,7 @@
 
 .footer-brand>img {
 	height: 35px;
+	image-rendering: -webkit-optimize-contrast;
 }
 
 @media (min-width: 767px) {

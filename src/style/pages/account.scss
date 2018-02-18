@@ -32,8 +32,13 @@ h2 {
   font-size: 1.125rem;
 }
 
-.bg-cream .form-control {
+.form-section .form-control {
   border-width: 0;
+}
+
+.form-section .form-control-container .form-control {
+  border-width: 1px;
+  box-shadow: none;
 }
 
 .form-section {
@@ -74,6 +79,17 @@ h2 {
   font-size: 1.25rem;
   font-weight: 500;
   color: rgba(20,38,39,.8);
+}
+
+.form-section .form-control-lg {
+  box-shadow: rgba(157,157,157,.08) 0 12px 16px;
+}
+
+.form-control-container {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: rgba(0,0,0, .14) 0 80px 140px;
 }
 
 @media (min-width: 768px) {
@@ -144,5 +160,17 @@ h2 {
   }
   .form-section>.row>div:nth-child(2) {
     padding-left: 70px;
+  }
+
+  .has-border-right:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 350px;
+    border-right: #e0e0e4 1px solid;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    margin: auto;
   }
 }

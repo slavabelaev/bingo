@@ -5,6 +5,11 @@
 
 .bg-cream { background-color: #f1efe6; }
 
+.btn .feather,
+.nav-link .feather {
+	margin-right: 12px;
+}
+
 .nav-link,
 .btn {
 	display: inline-flex;

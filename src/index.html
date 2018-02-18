@@ -4,9 +4,9 @@
 	<meta charset="UTF-8">
 	<title>Bingo</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css">
 	<link rel="stylesheet" href="css/common.css">
 	<link rel="stylesheet" href="css/pages/index.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css">
 </head>
 <body>
 
@@ -171,48 +171,27 @@
 	<!-- /Login -->
 <!-- /If not authorized -->
 
-	<!-- Left SideNav -->
-	<div id="leftSideNav" class="sidenav">
-		<nav class="nav">
-			<a class="nav-link" href="#">Menu item 1</a>
-			<a class="nav-link" href="#">Menu item 2</a>
-			<a class="nav-link" href="#">Menu item 3</a>
-			<a class="nav-link" href="#">Menu item 4</a>
-			<a class="nav-link disabled" href="#">Menu item Disabled</a>
-		</nav>
-	</div>
-	<!-- /Left SideNav -->
-
-	<!-- Right SideNav -->
-	<div id="rightSideNav" class="sidenav sidenav_right">
-		<nav class="nav">
-			<a class="nav-link" href="#">User menu item 1</a>
-			<a class="nav-link" href="#">User menu item 2</a>
-			<a class="nav-link" href="#">User menu item 3</a>
-			<a class="nav-link" href="#">User menu item 4</a>
-			<a class="nav-link disabled" href="#">Menu item Disabled</a>
-		</nav>
-	</div>
-	<!-- /Right SideNav -->
-
+	<!-- Header -->
 	<header id="header">
 		<nav id="info-bar__top" class="navbar navbar-expand-md navbar-light">
 			<div class="container d-flex">
-				<button class="navbar-toggler btn-secondary" data-toggle="sidenav" href="#leftSideNav">
+				<button class="navbar-toggler btn-secondary" data-toggle="sidenav" href="#main-sidenav">
 					<i data-feather="menu"></i>
 				</button>
 
-			  	<a class="navbar-brand" href="#"><img src="img/logo@2x.png" alt=""></a>
+				<a class="navbar-brand" href="#"><img src="img/logo@2x.png" alt=""></a>
 
-				<button class="navbar-toggler btn-secondary" data-toggle="sidenav" href="#rightSideNav">
+				<button class="navbar-toggler btn-secondary" data-toggle="sidenav" href="#user-sidenav">
 					<i data-feather="user"></i>
 				</button>
 
 				<!-- If authorized (remove class — d-none) -->
-				<div id="info-bar__top__actions" class="d-none">
-			      	<a class="btn btn-secondary">Nakit Para <span class="text-yellow">220. TL</span></a>
-			      	<a class="btn btn-primary">Bonus Para <span class="text-green">3,320. TL</span></a>
-			    </div>
+				<div id="user-sidenav" class="sidenav sidenav_right d-none">
+					<nav class="nav">
+						<a class="btn btn-secondary">Nakit Para <span class="text-yellow">220. TL</span></a>
+						<a class="btn btn-primary">Bonus Para <span class="text-green">3,320. TL</span></a>
+					</nav>
+				</div>
 				<!-- /If authorized -->
 
 				<!-- If not authorized -->
@@ -226,26 +205,32 @@
 		</nav>
 		<nav id="main-navigation" class="navbar navbar-expand-md navbar-dark">
 			<div class="container">
-			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				  <i data-feather="menu"></i>
-			  </button>
+				<div class="sidenav" id="main-sidenav">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="#"><i data-feather="home"></i>Anasayfa</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#"><i data-icon="tl"></i>Nakit Islemleri</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#"><i data-feather="clock"></i>Gecmis Islemler</a>
+						</li>
+					</ul>
+				</div>
 
-			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-			    <ul class="navbar-nav mr-auto">
-			      <li class="nav-item active">
-			        <a class="nav-link" href="#"><i data-feather="home"></i>Anasayfa <span class="sr-only">(current)</span></a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link" href="#"><i data-icon="tl"></i>Nakit Islemleri</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link" href="#"><i data-feather="clock"></i>Gecmis Islemler</a>
-			      </li>
-			    </ul>
-			  </div>
-		  </div>
+				<!-- If authorized (remove class — d-none) -->
+				<div id="user-navbar" class="d-none">
+					<a href="#" class="nav-link"><i data-feather="log-out"></i>Richard34</a>
+					<i data-feather="user"></i>
+				</div>
+				<!-- /If authorized -->
+			</div>
 		</nav>
 	</header>
+	<!-- /Header -->
+
+	<!-- Page content -->
 	<main id="main">
 
 		<div id="carousel-wrapper">
@@ -581,6 +566,9 @@
 			</ul>
 		</div>
 	</main>
+	<!-- Page content -->
+
+	<!-- Footer -->
 	<footer id="footer">
 		<div class="container">
 			<div id="footer__top">
@@ -594,6 +582,7 @@
 			<p>Sed et posuere lectus. Aenean porta feugiat viverra. Sed ac purus imperdiet, aliquet velit venenatis, vulputate nibh. Quisque volutpat mauris dolor, non facilisis nisi aliquet sit amet. Praesent fringilla elementum lacus, quis aliquam risus ultricies sed. Integer arcu dui, volutpat in facilisis</p>
 		</div>
 	</footer>
+	<!-- /Footer -->
 
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

@@ -3,6 +3,7 @@
 .text-blue { color: $blue; }
 .text-green { color: $green; }
 
+.bg-cream { background-color: #f1efe6; }
 
 .nav-link,
 .btn {
@@ -23,7 +24,7 @@
 	min-height: 40px;
 }
 
-.btn-primary {
+.btn-primary.btn-lg {
 	color: #235759;
 }
 .btn-lg {

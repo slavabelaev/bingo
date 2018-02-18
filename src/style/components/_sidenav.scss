@@ -1,45 +1,46 @@
-/* The side navigation menu */
-.sidenav {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: -100%;
-  z-index: 20;
-  transition: 0.36s;
-  overflow: hidden;
-}
-.sidenav.show {
-  left: 0;
-}
-.sidenav.sidenav_right {
-  left: initial;
-  right: -100%;
-}
-.sidenav.sidenav_right.show {
-  left: initial;
-  right: 0;
-}
-.sidenav>.nav {
-  display: block;
-  height: 100%; /* 100% Full-height */
-  width: 300px; /* 0 width - change this with JavaScript */
-  position: absolute; /* Stay in place */
-  top: 0; /* Stay at the top */
-  left: 0;
+@media (max-width: 767px) {
+  .sidenav {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    z-index: 20;
+    transition: left .36s ease;
+    overflow: hidden;
+  }
+  .sidenav.show {
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+    transition: left .36s ease, background-color .24s ease .36s;
+  }
+  .sidenav.sidenav_right {
+    left: initial;
+    right: -100%;
+    transition: right .36s ease;
+  }
+  .sidenav.sidenav_right.show {
+    left: initial;
+    right: 0;
+    transition: right .36s ease, background-color 1s ease .36s;
+  }
+  .sidenav>.navbar-nav,
+  .sidenav>.nav {
+    display: block;
+    height: 100%;
+    width: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
 
-  background-color: #142627; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 15px; /* Place content 60px from the top */
-  transition: 0.36s; /* 0.5 second transition effect to slide in the sidenav */
-}
-.sidenav.sidenav_right>.nav {
-  left: initial;
-  right: 0;
-}
-
-.sidenav>.nav>.nav-link {
-  display: block;
-  font-size: 1.5rem;
-  transition: 0.36s;
+    background-color: #142627;
+    overflow-x: hidden;
+    padding-top: 15px;
+    transition: 0.36s;
+  }
+  .sidenav.sidenav_right>.navbar-nav,
+  .sidenav.sidenav_right>.nav {
+    left: initial;
+    right: 0;
+  }
 }

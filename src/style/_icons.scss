@@ -12,3 +12,13 @@
 [data-icon="filter"] { background-image: url(../img/icons/filter.svg); }
 [data-icon="grid"] { background-image: url(../img/icons/grid.png); }
 [data-icon="list"] { background-image: url(../img/icons/list.png); }
+[data-icon="bank"] { background-image: url(../img/icons/bank.svg); }
+[data-icon="smartphone"] { background-image: url(../img/icons/smartphone.svg); }
+[data-icon="credit-card"] { background-image: url(../img/icons/credit-card.svg); }
+
+[data-icon="credit-card"],
+[data-icon="smartphone"],
+[data-icon="bank"] {
+	width: 28px;
+	height: 28px;
+}

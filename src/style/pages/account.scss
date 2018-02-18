@@ -1,0 +1,136 @@
+#main-navigation {
+  background-color: #122223;
+}
+
+#account-navbar-container {
+  padding: 1rem;
+  background-color: #efefef;
+  box-shadow: rgba(157, 157, 157, .14) 0 8px 84px;
+}
+
+#account-navbar-container .navbar-text {
+  padding: .5rem;
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #132324;
+}
+
+.btn-primary.btn-lg {
+  color: #ffffff;
+  text-transform: capitalize;
+}
+
+
+h1 {
+  font-size: 1.375rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+h2 {
+  font-size: 1.125rem;
+}
+
+.bg-cream .form-control {
+  border-width: 0;
+}
+
+.form-section {
+  padding: 20px;
+}
+
+.form-section header {
+  margin-bottom: 20px;
+}
+
+.form-section [data-icon="smartphone"] {
+  height: 55px;
+  width: 55px;
+  margin-bottom: 40px;
+}
+
+.form-section>.row>div:nth-child(1) {
+  padding-right: 8px;
+}
+.form-section>.row>div:nth-child(2) {
+  padding-left: 8px;
+}
+
+#account-navbar {
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  #account-navbar>.navbar-nav {
+    flex-direction: row;
+  }
+  #account-navbar-container {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    justify-content: center;
+  }
+  #account-navbar-container,
+  #main .bg-cream {
+    border-radius: 0 0 10px 10px;
+  }
+
+  #account-navbar-container .nav-link {
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: 1.85rem .5rem;
+    color: rgba(20,38,39,.8);
+    white-space: nowrap;
+  }
+  #account-navbar-container .nav-item.active .nav-link {
+    color: rgba(20,38,39,1);
+  }
+  #account-navbar-container .nav-item:not(:last-child) {
+    margin-right: 2rem;
+  }
+
+  #account-navbar-container .nav-item.active {
+    border-bottom: 3px solid #ecc50e;
+  }
+  #main .bg-cream {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 992px) {
+  #account-navbar {
+    justify-content: flex-end;
+  }
+  #account-navbar-container {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+}
+@media (min-width: 1300px) {
+  #account-navbar-container {
+    padding-left: 3.4375rem;
+    padding-right: 3.4375rem;
+  }
+  #main .bg-cream {
+    margin-bottom: 555px;
+  }
+  .form-section {
+    max-width: 1130px;
+    margin: auto;
+    padding: 85px 0;
+  }
+
+  .form-section>.row>div:nth-child(1) {
+    padding-right: 70px;
+  }
+  .form-section>.row>div:nth-child(2) {
+    padding-left: 70px;
+  }
+}
+
+@media (max-width: 767px) {
+  #main>.container {
+    padding: 0;
+  }
+}

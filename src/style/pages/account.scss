@@ -174,3 +174,8 @@ h2 {
     margin: auto;
   }
 }
+@media (max-width: 767px) {
+  #account-navbar-container .navbar-text {
+    display: none;
+  }
+}

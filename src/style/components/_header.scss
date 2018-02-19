@@ -71,9 +71,6 @@
 #authorization .btn:not(:last-child) {
 	margin-right: 10px;
 }
-#authorization .btn {
-	min-width: 175px;
-}
 
 #info-bar__top .navbar-toggler {
 	background-color: #142627;
@@ -116,5 +113,10 @@
 	#user-sidenav .btn {
 		width: 100%;
 		border-radius: 0;
+	}
+}
+@media (min-width: 360px) {
+	#authorization .btn {
+		min-width: 175px;
 	}
 }

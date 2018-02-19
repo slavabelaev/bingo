@@ -28,7 +28,7 @@
   .sidenav>.nav {
     display: block;
     height: 100%;
-    width: 300px;
+    width: 280px;
     position: absolute;
     top: 0;
     left: 0;
@@ -42,5 +42,10 @@
   .sidenav.sidenav_right>.nav {
     left: initial;
     right: 0;
+  }
+  .sidenav .nav-link {
+    display: block;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255,255,255,.1);
   }
 }

@@ -15,11 +15,10 @@
 	display: flex;
 	align-items: center;
 	margin-bottom: 0;
+	img {
+		margin-right: 15px;
+	}
 }
-#age-informer img {
-	margin-right: 15px;
-}
-
 .footer-brand>img {
 	height: 35px;
 	image-rendering: -webkit-optimize-contrast;

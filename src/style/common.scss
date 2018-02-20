@@ -7,10 +7,10 @@
 @import "components/sidenav";
 
 .modal-title {
-  display: flex;
-  align-items: center;
-}
-
-.modal-title .feather {
-  margin-right: 12px;
+  	display: flex;
+  	align-items: center;
+  	
+  	.feather {
+	  margin-right: 12px;
+	}
 }

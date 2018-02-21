@@ -1,305 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Bingo</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css">
-	<link rel="stylesheet" href="css/common.css">
-	<link rel="stylesheet" href="css/pages/account.css">
+    <meta charset="UTF-8">
+    <title>Bingo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/pages/account.css">
 </head>
+
 <body>
-
-
-<!-- If not authorized -->
-	<!-- Forgot password -->
-	<div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="forgotPasswordLabel">Forgot password?</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<form class="form-horizontal" role="form" method="POST" action="/register">
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="forgot-password-email"><i data-feather="at-sign"></i></span>
-							</div>
-							<input type="email" class="form-control" placeholder="Your email address" aria-label="Your email address" aria-describedby="forgot-password-email">
-						</div>
-					</form>
-					<div class="alert alert-danger" role="alert">
-						<i data-feather="alert-circle"></i> Error Message!
-					</div>
-				</div>
-				<div class="modal-footer justify-content-between">
-					<a href="#" data-toggle="modal" data-target="#loginModal" data-dismiss="modal">Login</a>
-					<button type="button" class="btn btn-primary" data-dismiss="modal">Reset Password</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /Forgot password -->
-
-	<!-- Create account -->
-	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="loginModalLabel">Sign in to your account</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<form class="form-horizontal" role="form" method="POST" action="/register">
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="login-email"><i data-feather="at-sign"></i></span>
-							</div>
-							<input type="email" class="form-control" placeholder="Your email address" aria-label="Your email address" aria-describedby="login-email">
-						</div>
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="login-password"><i data-feather="lock"></i></span>
-							</div>
-							<input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="login-password">
-						</div>
-					</form>
-					<div class="alert alert-danger" role="alert">
-						<i data-feather="alert-circle"></i> Error Message!
-					</div>
-				</div>
-				<div class="modal-footer justify-content-between">
-					<a href="#" data-toggle="modal" data-target="#forgotPasswordModal" data-dismiss="modal">Forgot password?</a>
-					<button type="button" class="btn btn-primary" data-dismiss="modal">Login</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /Create account -->
-
-	<!-- Login -->
-	<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="registerModalLabel">Creating Account</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<form class="form-horizontal" role="form" method="POST" action="/register">
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="email"><i data-feather="at-sign"></i></span>
-							</div>
-							<input type="email" class="form-control" placeholder="Your email address" aria-label="Your email address" aria-describedby="email">
-						</div>
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="password"><i data-feather="lock"></i></span>
-							</div>
-							<input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password">
-						</div>
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="user"><i data-feather="user"></i></span>
-							</div>
-							<input type="text" class="form-control" placeholder="First name">
-							<input type="text" class="form-control" placeholder="Last name">
-						</div>
-
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="date"><i data-feather="calendar"></i></span>
-							</div>
-							<input type="date" class="form-control" placeholder="Birth date" aria-label="Birth date" aria-describedby="date">
-						</div>
-
-						<div class="d-flex mb-3">
-							<div class="custom-control custom-radio custom-control-inline">
-								<input type="radio" id="sex_male" name="sex" checked class="custom-control-input">
-								<label class="custom-control-label" for="sex_male">Male</label>
-							</div>
-							<div class="custom-control custom-radio custom-control-inline">
-								<input type="radio" id="sex_female" name="sex" class="custom-control-input">
-								<label class="custom-control-label" for="sex_female">Female</label>
-							</div>
-						</div>
-
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="user-location"><i data-feather="map-pin"></i></span>
-							</div>
-							<input type="text" class="form-control" placeholder="Coutry">
-							<input type="text" class="form-control" placeholder="City">
-							<input type="text" class="form-control" placeholder="Postcode">
-						</div>
-
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="phone-number"><i data-feather="smartphone"></i></span>
-							</div>
-							<input type="text" class="form-control" placeholder="Phone number" aria-label="Phone number" aria-describedby="phone-number">
-						</div>
-
-						<div class="custom-control custom-checkbox mb-3">
-							<input type="checkbox" class="custom-control-input" id="terms-and-policy">
-							<label class="custom-control-label" for="terms-and-policy">I am over 18 years old and have read and accept the
-								<a href="/terms-and-conditions">Terms and Conditions</a> and <a href="/privacy-policy" class="">Privacy Policy</a></label>
-						</div>
-					</form>
-					<div class="alert alert-danger" role="alert">
-						<i data-feather="alert-circle"></i> Error Message!
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" data-dismiss="modal"><i data-feather="check"></i> Create Account</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /Login -->
-<!-- /If not authorized -->
-
-	<!-- Header -->
-	<header id="header">
-		<nav id="info-bar__top" class="navbar navbar-expand-md navbar-light">
-			<div class="container d-flex">
-				<button class="navbar-toggler btn-secondary" data-toggle="sidenav" href="#main-sidenav">
-					<i data-feather="menu"></i>
-				</button>
-
-			  	<a class="navbar-brand" href="index.html"><img src="img/logo@2x.png" alt=""></a>
-
-				<button class="navbar-toggler btn-secondary" data-toggle="sidenav" href="#user-sidenav">
-					<i data-feather="user"></i>
-				</button>
-
-				<!-- If authorized (remove class — d-none) -->
-				<div id="user-sidenav" class="sidenav sidenav_right">
-					<nav class="nav">
-						<a class="btn btn-secondary">Nakit Para <span class="text-yellow">220. TL</span></a>
-						<a class="btn btn-primary">Bonus Para <span class="text-green">3,320. TL</span></a>
-					</nav>
-			    </div>
-				<!-- /If authorized -->
-
-				<!-- If not authorized -->
-				<div id="authorization" class="d-none">
-					<a class="btn btn-secondary" data-toggle="modal" data-target="#loginModal"><i data-feather="log-in"></i> Login</a>
-					<a class="btn btn-primary" data-toggle="modal" data-target="#registerModal"><i data-feather="user-plus"></i> Create account</a>
-				</div>
-				<!-- /If not authorized -->
-
-			</div>
-		</nav>
-		<nav id="main-navigation" class="navbar navbar-expand-md navbar-dark">
-			<div class="container">
-			  	<div class="sidenav" id="main-sidenav">
-					<ul class="navbar-nav mr-auto">
-					  <li class="nav-item active">
-						<a class="nav-link" href="#"><i data-icon="home"></i>Anasayfa</a>
-					  </li>
-					  <li class="nav-item">
-						<a class="nav-link" href="#"><i data-icon="tl"></i>Nakit Islemleri</a>
-					  </li>
-					  <li class="nav-item">
-						<a class="nav-link" href="#"><i data-feather="clock"></i>Gecmis Islemler</a>
-					  </li>
-					</ul>
-			  	</div>
-				<div id="user-navbar">
-					<a href="#" class="nav-link"><i data-feather="log-out"></i>Richard34</a>
-					<i data-icon="user"></i>
-				</div>
-		  </div>
-		</nav>
-	</header>
-	<!-- /Header -->
-
-	<!-- Page content -->
-	<main id="main">
-		<div class="container">
-			<div class="bg-cream">
-
-				<section class="form-section">
-					<form class="row" action="">
-						<div class="col-md-6 has-border-right">
-							<header>
-								<h2>Hemen Kayıt Ol</h2>
-								<p class="text-muted">There are many variations of passages of Lorem Ipsum available,
-									but the majority have</p>
-							</header>
-
-							<div class="form-control-container mb-4">
-								<div class="form-group">
-									<input type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Adınız Soyadınız">
-								</div>
-								<div class="form-group">
-									<input type="text" class="form-control form-control-lg" id="exampleFormControlInput2" placeholder="Kullanıcı Adı">
-								</div>
-								<div class="form-group">
-									<input type="text" class="form-control form-control-lg" id="exampleFormControlInput3" placeholder="E-Posta Adresiniz">
-								</div>
-								<div class="form-group">
-									<input type="text" class="form-control form-control-lg" id="exampleFormControlInput4" placeholder="Şifreniz">
-								</div>
-								<button type="submit" class="btn btn-primary btn-lg w-100">Hemen Üye Ol</button>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<header>
-								<h2>Giriş Yap</h2>
-								<p class="text-muted">There are many variations of passages of Lorem Ipsum available,
-									but the majority have</p>
-							</header>
-							<div class="form-control-container mb-2">
-								<div class="form-group">
-									<input type="text" class="form-control form-control-lg" id="exampleFormControlInput5" placeholder="Adınız Soyadınız">
-								</div>
-								<div class="form-group">
-									<input type="text" class="form-control form-control-lg" id="exampleFormControlInput6" placeholder="Şifreniz">
-								</div>
-								<button type="submit" class="btn btn-primary btn-lg w-100">Giriş Yap</button>
-							</div>
-							<p class="p-2">Şifremi Unuttum ?</p>
-						</div>
-					</form>
-				</section>
-			</div>
-		</div>
-	</main>
-	<!-- /Page content -->
-
-	<!-- Footer-->
-	<footer id="footer">
-		<div class="container">
-			<div id="footer__top">
-				<figure id="age-informer">
-					<img src="img/+18.png" alt="+18">
-					<figcaption>Tombala oynatarak kazandıran adres. <br>18 yaşından küçük bireylerin sitemize üye olması ve tombala oynaması yasaktır.</figcaption>
-				</figure>
-				<a class="footer-brand" href="#"><img src="img/logo@2x.png" alt=""></a>
-			</div>
-			<p>Nulla posuere ex eu scelerisque ultrices. Maecenas ultricies eget urna sit amet eleifend. Curabitur risus nisl, volutpat at fringilla at, rutrum vitae lorem. Nunc dignissim vestibulum metus, et bibendum enim finibus a. Aliquam nec urna ut felis tristique iaculis. Suspendisse vel accumsan nulla. Aliquam dictum justo ut urna semper sollicitudin. Suspendisse potenti.</p>
-			<p>Sed et posuere lectus. Aenean porta feugiat viverra. Sed ac purus imperdiet, aliquet velit venenatis, vulputate nibh. Quisque volutpat mauris dolor, non facilisis nisi aliquet sit amet. Praesent fringilla elementum lacus, quis aliquam risus ultricies sed. Integer arcu dui, volutpat in facilisis</p>
-		</div>
-	</footer>
-	<!-- Footer -->
-
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- If not authorized -->
+    <!-- Forgot password -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="forgotPasswordLabel">Forgot password?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form" method="POST" action="/register">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="forgot-password-email"><i data-feather="at-sign"></i></span>
+                            </div>
+                            <input type="email" class="form-control" placeholder="Your email address" aria-label="Your email address" aria-describedby="forgot-password-email">
+                        </div>
+                    </form>
+                    <div class="alert alert-danger" role="alert">
+                        <i data-feather="alert-circle"></i> Error Message!
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <a href="#" data-toggle="modal" data-target="#loginModal" data-dismiss="modal">Login</a>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Reset Password</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Forgot password -->
+    <!-- Create account -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Sign in to your account</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form" method="POST" action="/register">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="login-email"><i data-feather="at-sign"></i></span>
+                            </div>
+                            <input type="email" class="form-control" placeholder="Your email address" aria-label="Your email address" aria-describedby="login-email">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="login-password"><i data-feather="lock"></i></span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="login-password">
+                        </div>
+                    </form>
+                    <div class="alert alert-danger" role="alert">
+                        <i data-feather="alert-circle"></i> Error Message!
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <a href="#" data-toggle="modal" data-target="#forgotPasswordModal" data-dismiss="modal">Forgot password?</a>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Create account -->
+    <!-- Login -->
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Creating Account</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form" method="POST" action="/register">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="email"><i data-feather="at-sign"></i></span>
+                            </div>
+                            <input type="email" class="form-control" placeholder="Your email address" aria-label="Your email address" aria-describedby="email">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="password"><i data-feather="lock"></i></span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="user"><i data-feather="user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="First name">
+                            <input type="text" class="form-control" placeholder="Last name">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="date"><i data-feather="calendar"></i></span>
+                            </div>
+                            <input type="date" class="form-control" placeholder="Birth date" aria-label="Birth date" aria-describedby="date">
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="sex_male" name="sex" checked class="custom-control-input">
+                                <label class="custom-control-label" for="sex_male">Male</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="sex_female" name="sex" class="custom-control-input">
+                                <label class="custom-control-label" for="sex_female">Female</label>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="user-location"><i data-feather="map-pin"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Coutry">
+                            <input type="text" class="form-control" placeholder="City">
+                            <input type="text" class="form-control" placeholder="Postcode">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="phone-number"><i data-feather="smartphone"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Phone number" aria-label="Phone number" aria-describedby="phone-number">
+                        </div>
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="terms-and-policy">
+                            <label class="custom-control-label" for="terms-and-policy">I am over 18 years old and have read and accept the
+                                <a href="/terms-and-conditions">Terms and Conditions</a> and <a href="/privacy-policy" class="">Privacy Policy</a></label>
+                        </div>
+                    </form>
+                    <div class="alert alert-danger" role="alert">
+                        <i data-feather="alert-circle"></i> Error Message!
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i data-feather="check"></i> Create Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Login -->
+    <!-- /If not authorized -->
+    <!-- Header -->
+    <header id="header">
+        <nav id="info-bar__top" class="navbar navbar-expand-md navbar-light">
+            <div class="container d-flex">
+                <button class="navbar-toggler btn-secondary" data-toggle="sidenav" href="#main-sidenav">
+                    <i data-feather="menu"></i>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="img/logo@2x.png" alt=""></a>
+                <button class="navbar-toggler btn-secondary" data-toggle="sidenav" href="#user-sidenav">
+                    <i data-feather="user"></i>
+                </button>
+                <!-- If authorized (remove class — d-none) -->
+                <div id="user-sidenav" class="sidenav sidenav_right">
+                    <nav class="nav">
+                        <a class="btn btn-secondary">Nakit Para <span class="text-yellow">220. TL</span></a>
+                        <a class="btn btn-primary">Bonus Para <span class="text-green">3,320. TL</span></a>
+                    </nav>
+                </div>
+                <!-- /If authorized -->
+                <!-- If not authorized -->
+                <div id="authorization" class="d-none">
+                    <a class="btn btn-secondary" data-toggle="modal" data-target="#loginModal"><i data-feather="log-in"></i> Login</a>
+                    <a class="btn btn-primary" data-toggle="modal" data-target="#registerModal"><i data-feather="user-plus"></i> Create account</a>
+                </div>
+                <!-- /If not authorized -->
+            </div>
+        </nav>
+        <nav id="main-navigation" class="navbar navbar-expand-md navbar-dark">
+            <div class="container">
+                <div class="sidenav" id="main-sidenav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#"><i data-icon="home"></i>Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i data-icon="tl"></i>Nakit Islemleri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i data-feather="clock"></i>Gecmis Islemler</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="user-navbar">
+                    <a href="#" class="nav-link"><i data-feather="log-out"></i>Richard34</a>
+                    <i data-icon="user"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- /Header -->
+    <!-- Page content -->
+    <main id="main">
+        <div class="container">
+            <div class="bg-cream">
+                <section class="form-section">
+                    <form class="row" action="">
+                        <div class="col-md-6 has-border-right">
+                            <header>
+                                <h2>Hemen Kayıt Ol</h2>
+                                <p class="text-muted">There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                            </header>
+                            <div class="form-control-container mb-4">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Adınız Soyadınız">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" id="exampleFormControlInput2" placeholder="Kullanıcı Adı">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" id="exampleFormControlInput3" placeholder="E-Posta Adresiniz">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" id="exampleFormControlInput4" placeholder="Şifreniz">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg w-100">Hemen Üye Ol</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <header>
+                                <h2>Giriş Yap</h2>
+                                <p class="text-muted">There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                            </header>
+                            <div class="form-control-container mb-2">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" id="exampleFormControlInput5" placeholder="Adınız Soyadınız">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" id="exampleFormControlInput6" placeholder="Şifreniz">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg w-100">Giriş Yap</button>
+                            </div>
+                            <p class="p-2">Şifremi Unuttum ?</p>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+    <!-- /Page content -->
+    <!-- Footer-->
+    <footer id="footer">
+        <div class="container">
+            <div id="footer__top">
+                <figure id="age-informer">
+                    <img src="img/+18.png" alt="+18">
+                    <figcaption>Tombala oynatarak kazandıran adres.
+                        <br>18 yaşından küçük bireylerin sitemize üye olması ve tombala oynaması yasaktır.</figcaption>
+                </figure>
+                <a class="footer-brand" href="#"><img src="img/logo@2x.png" alt=""></a>
+            </div>
+            <p>Nulla posuere ex eu scelerisque ultrices. Maecenas ultricies eget urna sit amet eleifend. Curabitur risus nisl, volutpat at fringilla at, rutrum vitae lorem. Nunc dignissim vestibulum metus, et bibendum enim finibus a. Aliquam nec urna ut felis tristique iaculis. Suspendisse vel accumsan nulla. Aliquam dictum justo ut urna semper sollicitudin. Suspendisse potenti.</p>
+            <p>Sed et posuere lectus. Aenean porta feugiat viverra. Sed ac purus imperdiet, aliquet velit venenatis, vulputate nibh. Quisque volutpat mauris dolor, non facilisis nisi aliquet sit amet. Praesent fringilla elementum lacus, quis aliquam risus ultricies sed. Integer arcu dui, volutpat in facilisis</p>
+        </div>
+    </footer>
+    <!-- Footer -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>
-	<script src="js/common.js"></script>
-	<script src="js/components/sidenav.js"></script>
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/components/sidenav.js"></script>
 </body>
+
 </html>

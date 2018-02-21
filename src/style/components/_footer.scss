@@ -1,34 +1,37 @@
 #footer {
-	border-top: 1px solid rgba(255,255,255,.1);
-	color: rgba(255,255,255,.6);
-	font-size: 0.8125rem;
-	padding-top: 20px;
-	padding-bottom: 20px;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    color: rgba(255, 255, 255, .6);
+    font-size: 0.8125rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
+
 #footer__top {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
+
 #age-informer {
-	display: flex;
-	align-items: center;
-	margin-bottom: 0;
-	img {
-		margin-right: 15px;
-	}
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    img {
+        margin-right: 15px;
+    }
 }
+
 .footer-brand>img {
-	height: 35px;
-	image-rendering: -webkit-optimize-contrast;
+    height: 35px;
+    image-rendering: -webkit-optimize-contrast;
 }
 
 @media (min-width: 767px) {
-	#footer {
-		padding-bottom: 70px;
-	}
-	#footer__top {
-		margin-bottom: 40px;
-	}
+    #footer {
+        padding-bottom: 70px;
+    }
+    #footer__top {
+        margin-bottom: 40px;
+    }
 }

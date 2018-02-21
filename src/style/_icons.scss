@@ -1,32 +1,68 @@
 [data-icon] {
-	display: inline-block;
-	vertical-align: middle;
-	width: 24px;
-	height: 24px;
-	background: 100% center no-repeat;
-	background-size: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    background: 100% center no-repeat;
+    background-size: 100%;
 }
-[data-icon="home"] { background-image: url(../img/icons/home.png); }
-[data-icon="tl"] { background-image: url(../img/icons/tl.svg); }
-[data-icon="time"] { background-image: url(../img/icons/time.png); }
-[data-icon="filter"] { background-image: url(../img/icons/filter.svg); }
-[data-icon="grid"] { background-image: url(../img/icons/grid.png); }
-[data-icon="list"] { background-image: url(../img/icons/list.png); }
-[data-icon="bank"] { background-image: url(../img/icons/bank.svg); }
-[data-icon="smartphone"] { background-image: url(../img/icons/smartphone.svg); }
-[data-icon="credit-card"] { background-image: url(../img/icons/credit-card.svg); }
-[data-icon="user"] { background-image: url(../img/icons/user.svg); }
-[data-icon="home"] { background-image: url(../img/icons/home.svg); }
-[data-icon="coins"] { background-image: url(../img/icons/coins.svg); }
+
+[data-icon="home"] {
+    background-image: url(../img/icons/home.png);
+}
+
+[data-icon="tl"] {
+    background-image: url(../img/icons/tl.svg);
+}
+
+[data-icon="time"] {
+    background-image: url(../img/icons/time.png);
+}
+
+[data-icon="filter"] {
+    background-image: url(../img/icons/filter.svg);
+}
+
+[data-icon="grid"] {
+    background-image: url(../img/icons/grid.png);
+}
+
+[data-icon="list"] {
+    background-image: url(../img/icons/list.png);
+}
+
+[data-icon="bank"] {
+    background-image: url(../img/icons/bank.svg);
+}
+
+[data-icon="smartphone"] {
+    background-image: url(../img/icons/smartphone.svg);
+}
+
+[data-icon="credit-card"] {
+    background-image: url(../img/icons/credit-card.svg);
+}
+
+[data-icon="user"] {
+    background-image: url(../img/icons/user.svg);
+}
+
+[data-icon="home"] {
+    background-image: url(../img/icons/home.svg);
+}
+
+[data-icon="coins"] {
+    background-image: url(../img/icons/coins.svg);
+}
 
 [data-icon="credit-card"],
 [data-icon="smartphone"],
 [data-icon="bank"] {
-	width: 28px;
-	height: 28px;
+    width: 28px;
+    height: 28px;
 }
 
 [data-icon="user"] {
-	width: 32px;
-	height: 32px;
+    width: 32px;
+    height: 32px;
 }

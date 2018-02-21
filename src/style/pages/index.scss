@@ -3,31 +3,32 @@
 @import "../components/offer-item";
 
 #info-bar {
-	background-color: #0e1d1d;
-	color: #5f6c6c;
-	font-size: 1.625rem;
-	font-weight: 100;
-	padding-top: 24px;
-	padding-bottom: 24px;
-	text-align: center;
+    background-color: #0e1d1d;
+    color: #5f6c6c;
+    font-size: 1.625rem;
+    font-weight: 100;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    text-align: center;
 }
 
 @media (min-width: 1300px) {
-	#info-bar ul.row>li:nth-child(2):after {
-		content: "";
-		position: absolute;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		border-right: 1px solid #5f6c6c;
-	}
+    #info-bar ul.row>li:nth-child(2):after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-right: 1px solid #5f6c6c;
+    }
 }
-@media (max-width: 767px) {
-	#info-bar {
-		display: none;
-	}
 
-	#main-navigation {
-		padding: 0;
-	}
+@media (max-width: 767px) {
+    #info-bar {
+        display: none;
+    }
+
+    #main-navigation {
+        padding: 0;
+    }
 }

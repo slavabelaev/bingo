@@ -2,70 +2,73 @@
     background-color: #152f2f;
     background: url(../../img/pages/index/carousel/wrapper_bg.jpg) center no-repeat;
     background-size: cover;
-	filter: contrast(115%);
-	.carousel-item__content {
-		padding-left: 3px;
-	}
+    filter: contrast(115%);
+    .carousel-item__content {
+        padding-left: 3px;
+    }
 }
+
 #carousel {
-	display: flex;
+    display: flex;
     align-items: center;
     color: #e7e4ee;
     .lead {
-		margin-bottom: 50px;
-	}
-	h2 {
-		color: #f6d70e;
-		font-weight: normal;
-	}
-	.carousel-inner,
-	.carousel-item {
-		height: 100%;
-	}
-	.carousel-item.active,
-	.carousel-item-next,
-	.carousel-item-prev {
-		display: flex;
-	}
-	.carousel-item {
-		padding-top: 60px;
-		padding-bottom: 60px;
-		align-items: center;
-		&.active {
-			background-position-y: 30px;
-		}
-		.btn {
-			min-width: 275px;
-			text-transform: uppercase;
-			letter-spacing: 2px;
-		}
-	}
+        margin-bottom: 50px;
+    }
+    h2 {
+        color: #f6d70e;
+        font-weight: normal;
+    }
+    .carousel-inner,
+    .carousel-item {
+        height: 100%;
+    }
+    .carousel-item.active,
+    .carousel-item-next,
+    .carousel-item-prev {
+        display: flex;
+    }
+    .carousel-item {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        align-items: center;
+        &.active {
+            background-position-y: 30px;
+        }
+        .btn {
+            min-width: 275px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    }
 }
 
 @media (min-width: 768px) {
-	#carousel {
-		height: 630px;
-		.carousel-item {
-			background-repeat: no-repeat;
-			background-position: 100% -600%;
-			background-size: auto 100%;
-			transition: .6s ease;
-		}
-	}
-	#carousel-wrapper {
-		position: relative;
-		margin-top: -80px;
-		z-index: 0;
-	}
+    #carousel {
+        height: 630px;
+        .carousel-item {
+            background-repeat: no-repeat;
+            background-position: 100% -600%;
+            background-size: auto 100%;
+            transition: .6s ease;
+        }
+    }
+    #carousel-wrapper {
+        position: relative;
+        margin-top: -80px;
+        z-index: 0;
+    }
 }
+
 @media (min-width: 992px) {
-	#carousel .carousel-item {
-		background-position-x: 90%;
-		background-size: auto 120%;
-	}
+    #carousel .carousel-item {
+        background-position-x: 90%;
+        background-size: auto 120%;
+    }
 }
+
 @media (max-width: 767px) {
-	#carousel-wrapper .carousel-item {
-		background-image: none!important;
-	}
+    #carousel-wrapper .carousel-item {
+        background-image: none!important;
+    }
 }

@@ -2,6 +2,8 @@
     feather.replace();
     AOS.init();
 
+    $('#carousel .carousel-item:eq(0)').addClass('active');
+
     $('.carousel').carousel({
         interval: false
     });

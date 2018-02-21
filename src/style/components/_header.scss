@@ -11,6 +11,9 @@
 	.nav-link {
 		padding-left: 1rem;
 		padding-right: 1rem;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
 		[data-icon] {
 			opacity: .75;
 		}

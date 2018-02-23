@@ -111,8 +111,11 @@ ul.list-of-offers {
         &.row {
             flex-wrap: nowrap;
             overflow-x: scroll;
+        	margin-left: -15px;
+   			margin-right: -15px;
             &>li {
-                min-width: calc(100vw - 26px);
+                min-width: calc(80vw);
+				padding: 0 6px;
             }
         }
         &>li:first-child>.offer-item {
@@ -130,9 +133,9 @@ ul.list-of-offers {
                 background-color: #ecc927;
                 padding: 8px 10px;
                 padding-right: 25px;
-                border-radius: 0 2px 0 2px;
-                right: 0;
-                top: 0;
+                border-radius: 8px 0 0 0;
+			    right: 0;
+			    bottom: 62px;
                 z-index: 1;
                 font-size: 0.875rem;
             }

@@ -1,0 +1,40 @@
+#price-list {
+  background-color: #254749;
+  color: #ecc50e;
+  padding: 2rem;
+  margin-bottom: 6px;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+  font-size: 1.25rem;
+  .price-list__price {
+    font-weight: 500;
+    color: #fff;
+  }
+}
+
+#number-caller-board {
+  background-color: #152527;
+  border-radius: 10px;
+}
+
+#number-caller-board__list-of-numbers {
+  list-style: none;
+  color: #fff;
+  li {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 45px;
+    min-height: 45px;
+    border-radius: 7px;
+    background-color: #2f494b;
+    color: #819192;
+    margin-bottom: 25px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #number-caller-board__list-of-numbers {
+    max-width: 800px;
+  }
+}

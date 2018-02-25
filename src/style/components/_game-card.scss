@@ -50,7 +50,15 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 992px) {
+  .list-of-game-cards {
+    li {
+      flex: 1 50%;
+      max-width: calc(50% - 5px);
+    }
+  }
+}
+@media (max-width: 579px) {
   .list-of-game-cards {
     display: block;
     li {

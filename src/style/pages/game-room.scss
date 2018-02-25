@@ -1,4 +1,5 @@
 @import "../components/game-card";
+@import "../components/current-call-number";
 
 #main>.container {
   margin-bottom: 50px;
@@ -8,9 +9,10 @@
 }
 
 #price-list {
+  min-height: 90px;
+  align-items: center;
   background-color: #254749;
   color: #ecc50e;
-  padding: 2rem;
   margin-bottom: 8px;
   border-radius: 0 0 10px 10px;
   text-align: center;
@@ -19,6 +21,16 @@
   .price-list__price {
     font-weight: 500;
     color: #fff;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2rem;
+    text-decoration: none;
+  }
+  &>li:not(:last-child)>a {
+    border-right: #375456 1px solid;
   }
 }
 
@@ -31,7 +43,7 @@
 
 #number-caller-board__list-of-numbers {
   list-style: none;
-  padding: 24px;
+  padding: 20px;
   margin-bottom: 0;
   color: #fff;
   li {
@@ -45,13 +57,8 @@
     color: #819192;
     font-size: 1.25rem;
     font-weight: 500;
-    &:nth-child(1),
-    &:nth-child(16),
-    &:nth-child(31),
-    &:nth-child(46),
-    &:nth-child(61) {
-      margin-bottom: 24px;
-    }
+    margin: 4px 2px;
+    transition: .7s;
     &.active {
       background-color: #ecc50e;
       box-shadow: rgba(236, 197, 14, .53) 0 0 38px 2px;
@@ -66,6 +73,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  min-height: 450px;
 }
 
 #game-bar {
@@ -130,88 +138,18 @@
   }
 }
 
-.current-call-number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: content-box;
-  width: 400px;
-  height: 400px;
-  font-size: 60px;
-  font-weight: bold;
-  color: #236b89;
-  background-image:
-          radial-gradient(ellipse at center,#FFF 15%,#ddd 25%,#86a9b4 31%,#6b7d86 35%, transparent 35%),
-          url(../../img/pages/game-room/border-image.svg),
-          url(../../img/pages/game-room/ball-animation-bg.svg);
-  background-position: center;
-  background-size: auto, 180px, 180px;
-  background-repeat: no-repeat;
-  transition: background-size .7s ease;
-  transition-delay: .7s;
-}
-.current-call-number.animated {
-  background-size: auto, 260px, 360px;
-}
-
-.ball {
-  position: relative;
-  margin: 0;
-  border-radius: 50%;
-  transform: translateY(-500px);
-  transition: transform .7s ease, border .7s;
-  transition-delay: 0s, .7s;
-}
-.ball:after {
-  box-sizing: content-box;
-  content: attr(data-ball-number);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-image: radial-gradient(ellipse at center,#FFF 30%,#ddd 49%,#86a9b4 63%,#6b7d86 69%);
-  //box-shadow: rgba(0,0,0,.42) 0 0 84px inset, rgba(0,0,0,.24) 0 0 84px;
-  //border: #fdb843 35px solid;
-  transition: .7s;
-  transition-delay: .7s, .7s;
-}
-.ball:before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url(../../img/pages/game-room/ball-animation-bg.svg);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0;
-  z-index: -1;
-  transition: .7s ease;
-  transition-delay: .7s;
-}
-
-.ball.animated {
-  transform: translateY(0);
-}
-.ball.animated:after {
-  border: 34px solid #ecc50e;
-  box-shadow:
-      rgba(236,197,14,.8) 0 0 240px,
-      rgba(236,197,14,.2) 0 0 70px inset;
-}
-.ball.animated:before {
-  opacity: .1;
-  transform: scale(1.5);
-}
-
 @media (min-width: 1300px) {
   #number-caller-board__list-of-numbers {
-    max-width: 800px;
+    li {
+      margin: 4px 0;
+      &:nth-child(1),
+      &:nth-child(16),
+      &:nth-child(31),
+      &:nth-child(46),
+      &:nth-child(61) {
+        margin-bottom: 24px;
+      }
+    }
   }
   #game-bar__status {
     margin-left: 60px;
@@ -221,5 +159,42 @@
       padding-right: 40px;
       padding-left: 40px;
     }
+  }
+}
+
+@media (max-width: 992px) {
+  #price-list a {
+    min-height: 3rem;
+  }
+  #number-caller-board__current-call-number {
+    order: -1;
+  }
+}
+
+@media (max-width: 767px) {
+  #game-bar__status {
+    padding: 12px;
+    text-align: center;
+  }
+  #game-bar__recently-taken {
+    justify-content: center;
+  }
+  #game-room-navbar .navbar-nav {
+    flex-wrap: wrap;
+    width: 100%;
+    .nav-item {
+      flex: 1 50%;
+      &>a {
+        display: block;
+        padding: 6px;
+      }
+    }
+  }
+}
+
+@media (max-width: 374px) {
+  #game-bar__recently-taken {
+    flex-direction: column;
+    margin-bottom: 12px;
   }
 }

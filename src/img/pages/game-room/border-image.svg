@@ -1,0 +1,77 @@
+<svg width="270" height="270" viewBox="0 0 270 270" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>border-image</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(353 -54)">
+<g id="border-image">
+<g id="Ellipse">
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(-353 54)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(-353 54)" fill="#F2994A"/>
+</g>
+</g>
+<g id="Group">
+<g id="Ellipse">
+<use xlink:href="#path2_fill" transform="translate(-230 58)" fill="#FFFFFF"/>
+</g>
+<g id="Ellipse">
+<use xlink:href="#path2_fill" transform="translate(-182 69)" fill="#FFFFFF"/>
+</g>
+<g id="Ellipse">
+<use xlink:href="#path2_fill" transform="translate(-145 96)" fill="#FFFFFF"/>
+</g>
+<g id="Ellipse">
+<use xlink:href="#path2_fill" transform="translate(-120 136)" fill="#FFFFFF"/>
+</g>
+<g id="Ellipse">
+<use xlink:href="#path2_fill" transform="translate(-112 176)" fill="#FFFFFF"/>
+</g>
+</g>
+<g id="Group">
+<g id="Ellipse">
+<use xlink:href="#path2_fill" transform="matrix(1.38778e-17 1 -1 1.38778e-17 -95 217)" fill="#FFFFFF"/>
+</g>
+<g id="Ellipse">
+<use xlink:href="#path2_fill" transform="matrix(1.38778e-17 1 -1 1.38778e-17 -119 257)" fill="#FFFFFF"/>
+</g>
+<g id="Ellipse">
+<use xlink:href="#path2_fill" transform="matrix(1.38778e-17 1 -1 1.38778e-17 -158 285)" fill="#FFFFFF"/>
+</g>
+<g id="Ellipse">
+<use xlink:href="#path2_fill" transform="matrix(1.38778e-17 1 -1 1.38778e-17 -205 295)" fill="#FFFFFF"/>
+</g>
+</g>
+<g id="Group">
+<g id="Ellipse">
+<use xlink:href="#path2_fill" transform="matrix(1.73472e-16 -1 1 1.73472e-16 -348 201)" fill="#FFFFFF"/>
+</g>
+<g id="Ellipse">
+<use xlink:href="#path2_fill" transform="matrix(1.73472e-16 -1 1 1.73472e-16 -342 161)" fill="#FFFFFF"/>
+</g>
+<g id="Ellipse">
+<use xlink:href="#path2_fill" transform="matrix(1.73472e-16 -1 1 1.73472e-16 -317 121)" fill="#FFFFFF"/>
+</g>
+<g id="Ellipse">
+<use xlink:href="#path2_fill" transform="matrix(1.73472e-16 -1 1 1.73472e-16 -281 94)" fill="#FFFFFF"/>
+</g>
+</g>
+<g id="Group">
+<g id="Ellipse">
+<use xlink:href="#path2_fill" transform="matrix(-1 -5.55112e-17 5.55112e-17 -1 -254 310)" fill="#FFFFFF"/>
+</g>
+<g id="Ellipse">
+<use xlink:href="#path2_fill" transform="matrix(-1 -5.55112e-17 5.55112e-17 -1 -291 282)" fill="#FFFFFF"/>
+</g>
+<g id="Ellipse">
+<use xlink:href="#path2_fill" transform="matrix(-1 -5.55112e-17 5.55112e-17 -1 -315 242)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 270 135C 270 209.558 209.558 270 135 270C 60.4416 270 0 209.558 0 135C 0 60.4416 60.4416 0 135 0C 209.558 0 270 60.4416 270 135Z"/>
+<path id="path1_stroke_2x" d="M 236 135C 236 190.781 190.781 236 135 236L 135 304C 228.336 304 304 228.336 304 135L 236 135ZM 135 236C 79.2192 236 34 190.781 34 135L -34 135C -34 228.336 41.6639 304 135 304L 135 236ZM 34 135C 34 79.2192 79.2192 34 135 34L 135 -34C 41.6639 -34 -34 41.6639 -34 135L 34 135ZM 135 34C 190.781 34 236 79.2192 236 135L 304 135C 304 41.6639 228.336 -34 135 -34L 135 34Z"/>
+<path id="path2_fill" d="M 25 12.5C 25 19.4036 19.4036 25 12.5 25C 5.59644 25 0 19.4036 0 12.5C 0 5.59644 5.59644 0 12.5 0C 19.4036 0 25 5.59644 25 12.5Z"/>
+</defs>
+</svg>

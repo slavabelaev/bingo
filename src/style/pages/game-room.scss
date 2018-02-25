@@ -114,44 +114,68 @@
   border-radius: 10px;
   margin-bottom: 8px;
   .nav-link {
-    padding: 12px 40px;
+    padding: 12px;
   }
   .list-of-badges {
     display: flex;
+    flex-wrap: wrap;
+    padding: 0;
     margin-bottom: 0;
-    li:not(:last-child) {
-      margin-right: 8px;
+    li {
+      margin: 4px;
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 }
 
-.ball {
-  position: relative;
-  width: 200px;
-  height: 200px;
+.current-call-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: content-box;
+  width: 400px;
+  height: 400px;
   font-size: 60px;
   font-weight: bold;
   color: #236b89;
+  background-image:
+          radial-gradient(ellipse at center,#FFF 15%,#ddd 25%,#86a9b4 31%,#6b7d86 35%, transparent 35%),
+          url(../../img/pages/game-room/border-image.svg),
+          url(../../img/pages/game-room/ball-animation-bg.svg);
+  background-position: center;
+  background-size: auto, 180px, 180px;
+  background-repeat: no-repeat;
+  transition: background-size .7s ease;
+  transition-delay: .7s;
+}
+.current-call-number.animated {
+  background-size: auto, 260px, 360px;
+}
+
+.ball {
+  position: relative;
   margin: 0;
-  transition: .7s ease;
+  border-radius: 50%;
   transform: translateY(-500px);
+  transition: transform .7s ease, border .7s;
+  transition-delay: 0s, .7s;
 }
 .ball:after {
+  box-sizing: content-box;
   content: attr(data-ball-number);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
   width: 200px;
   height: 200px;
-  top: 0;
-  left: 0;
   border-radius: 50%;
-  background: radial-gradient(ellipse at center, #ffffff, #aaa);
+  background-image: radial-gradient(ellipse at center,#FFF 30%,#ddd 49%,#86a9b4 63%,#6b7d86 69%);
   //box-shadow: rgba(0,0,0,.42) 0 0 84px inset, rgba(0,0,0,.24) 0 0 84px;
   //border: #fdb843 35px solid;
-  transition: .7s ease;
-  transition-delay: .7s;
+  transition: .7s;
+  transition-delay: .7s, .7s;
 }
 .ball:before {
   content: "";
@@ -166,6 +190,7 @@
   background-repeat: no-repeat;
   background-position: center;
   opacity: 0;
+  z-index: -1;
   transition: .7s ease;
   transition-delay: .7s;
 }
@@ -174,20 +199,27 @@
   transform: translateY(0);
 }
 .ball.animated:after {
+  border: 34px solid #ecc50e;
   box-shadow:
-    rgba(236, 197, 14, 0.8) 0 0 240px,
-    rgba(236, 197, 14, .4) 0 0 70px inset;
+      rgba(236,197,14,.8) 0 0 240px,
+      rgba(236,197,14,.2) 0 0 70px inset;
 }
 .ball.animated:before {
-  transform: scale(2);
   opacity: .1;
+  transform: scale(1.5);
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1300px) {
   #number-caller-board__list-of-numbers {
     max-width: 800px;
   }
   #game-bar__status {
     margin-left: 60px;
+  }
+  #game-room-navbar {
+    .nav-link {
+      padding-right: 40px;
+      padding-left: 40px;
+    }
   }
 }

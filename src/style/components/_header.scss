@@ -10,8 +10,6 @@
     background-color: #122223;
     font-size: 1.125rem;
     .nav-link {
-        padding-left: 1rem;
-        padding-right: 1rem;
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -72,6 +70,15 @@
 
 #authorization .btn:not(:last-child) {
     margin-right: 10px;
+}
+
+@media (min-width: 992px) {
+    #main-navigation {
+        .nav-link {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
 }
 
 @media (min-width: 768px) {

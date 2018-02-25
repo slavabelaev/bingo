@@ -1,11 +1,21 @@
+@import "../components/game-card";
+
+#main>.container {
+  margin-bottom: 50px;
+  border-radius: 0 0 10px 10px;
+  padding: 0 8px 3px 8px;
+  background-color: #eceae1;
+}
+
 #price-list {
   background-color: #254749;
   color: #ecc50e;
   padding: 2rem;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   border-radius: 0 0 10px 10px;
   text-align: center;
   font-size: 1.25rem;
+  line-height: 1rem;
   .price-list__price {
     font-weight: 500;
     color: #fff;
@@ -13,12 +23,16 @@
 }
 
 #number-caller-board {
-  background-color: #152527;
+  display: flex;
+  background-image: radial-gradient(ellipse farthest-corner at center top, #294647 0%, #152527 75%);
   border-radius: 10px;
+  margin-bottom: 8px;
 }
 
 #number-caller-board__list-of-numbers {
   list-style: none;
+  padding: 24px;
+  margin-bottom: 0;
   color: #fff;
   li {
     display: inline-flex;
@@ -26,15 +40,154 @@
     justify-content: center;
     min-width: 45px;
     min-height: 45px;
-    border-radius: 7px;
+    border-radius: 8px;
     background-color: #2f494b;
     color: #819192;
-    margin-bottom: 25px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    &:nth-child(1),
+    &:nth-child(16),
+    &:nth-child(31),
+    &:nth-child(46),
+    &:nth-child(61) {
+      margin-bottom: 24px;
+    }
+    &.active {
+      background-color: #ecc50e;
+      box-shadow: rgba(236, 197, 14, .53) 0 0 38px 2px;
+      color: #fff;
+      z-index: 1;
+    }
   }
+}
+#number-caller-board__current-call-number {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#game-bar {
+  display: flex;
+  align-items: center;
+  color: #000;
+  background-color: #fff;
+  padding: 8px 16px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 1.125rem;
+}
+#game-bar__status {
+  flex: 1;
+  max-width: 640px;
+}
+#game-bar__recently-taken {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  figcaption {
+    padding: 12px;
+  }
+}
+#list-of-called-numbers {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+  li {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    margin-right: 8px;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    font-weight: 500;
+    background-color: #f8d531;
+    color: #fff;
+    box-shadow: rgba(0,0,0,.1) 0 10px 12px;
+  }
+}
+
+#game-room-navbar {
+  border-radius: 10px;
+  margin-bottom: 8px;
+  .nav-link {
+    padding: 12px 40px;
+  }
+  .list-of-badges {
+    display: flex;
+    margin-bottom: 0;
+    li:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+}
+
+.ball {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #236b89;
+  margin: 0;
+  transition: .7s ease;
+  transform: translateY(-500px);
+}
+.ball:after {
+  content: attr(data-ball-number);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, #ffffff, #aaa);
+  //box-shadow: rgba(0,0,0,.42) 0 0 84px inset, rgba(0,0,0,.24) 0 0 84px;
+  //border: #fdb843 35px solid;
+  transition: .7s ease;
+  transition-delay: .7s;
+}
+.ball:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../img/pages/game-room/ball-animation-bg.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  transition: .7s ease;
+  transition-delay: .7s;
+}
+
+.ball.animated {
+  transform: translateY(0);
+}
+.ball.animated:after {
+  box-shadow:
+    rgba(236, 197, 14, 0.8) 0 0 240px,
+    rgba(236, 197, 14, .4) 0 0 70px inset;
+}
+.ball.animated:before {
+  transform: scale(2);
+  opacity: .1;
 }
 
 @media (min-width: 1200px) {
   #number-caller-board__list-of-numbers {
     max-width: 800px;
+  }
+  #game-bar__status {
+    margin-left: 60px;
   }
 }

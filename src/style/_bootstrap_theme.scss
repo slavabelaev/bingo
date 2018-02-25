@@ -5,10 +5,23 @@
 .text-teal { color: $teal; }
 
 .bg-cream { background-color: #f1efe6; }
+.bg-purple { background-color: #9186bc; }
+.bg-teal { background-color: #30b4b1; }
+.bg-orange { background-color: #f1911f; }
+.bg-pink { background-color: #f1a0c4; }
+
+.badge[class*="bg-"] {
+	color: #fff;
+	font-weight: 500;
+}
 
 .btn .feather,
 .nav-link .feather {
 	margin-right: 12px;
+}
+
+.navbar {
+	font-size: 1.125rem;
 }
 
 .nav-link,.btn {

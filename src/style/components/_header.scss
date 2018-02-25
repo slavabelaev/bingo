@@ -8,6 +8,7 @@
 }
 #main-navigation {
     background-color: #122223;
+    font-size: 1.125rem;
     .nav-link {
         padding-left: 1rem;
         padding-right: 1rem;
@@ -37,7 +38,6 @@
     .nav-link {
         color: #fff;
         line-height: 1;
-        font-size: 1.25rem;
         .feather {
             color: #ecc50e;
         }
@@ -76,7 +76,7 @@
 
 @media (min-width: 768px) {
     #main-navigation {
-        padding: 1.25rem 1rem;
+        padding: 1rem;
     }
     #user-sidenav .btn:first-child {
         margin-right: 10px;

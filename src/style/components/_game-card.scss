@@ -1,0 +1,52 @@
+.list-of-game-cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: space-between;
+  padding: 0;
+  margin-bottom: 4px;
+  &>li {
+    flex: 1 20%;
+    max-width: calc(20% - 5px);
+    margin-bottom: 5px;
+  }
+}
+
+.game-card {
+  padding: 4px;
+  border-radius: 4px;
+  margin-bottom: 0;
+  .game-card__list-of-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: inline-flex;
+      flex-wrap: wrap;
+      flex: 1 12.5%;
+      min-height: 25px;
+      min-width: 25px;
+      max-width: 25px;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      border-radius: 4px;
+      margin: 2px;
+      font-size: .875rem;
+      font-weight: bold;
+    }
+    li:empty {
+      background-color: rgba(255,255,255,.3);
+    }
+  }
+  .game-card__title {
+    color: #fff;
+    font-size: .845rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    text-transform: uppercase;
+  }
+}

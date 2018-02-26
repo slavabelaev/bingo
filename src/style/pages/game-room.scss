@@ -1,5 +1,5 @@
 @import "../components/game-card";
-@import "../components/current-call-number";
+@import "../components/game-balls";
 
 #main>.container {
   margin-bottom: 50px;
@@ -71,7 +71,7 @@
     }
   }
 }
-#number-caller-board__current-call-number {
+#game-balls-container {
   display: flex;
   flex: 1;
   align-items: center;
@@ -169,7 +169,7 @@
   #price-list a {
     min-height: 3rem;
   }
-  #number-caller-board__current-call-number {
+  #game-balls-container {
     order: -1;
   }
   #number-caller-board__list-of-numbers li {

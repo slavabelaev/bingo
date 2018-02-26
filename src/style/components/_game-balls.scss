@@ -1,0 +1,94 @@
+$ballRollingDurration: 3s;
+
+#game-balls-container {
+  background-image: url(../../img/pages/game-room/balls-circle-bg.svg);
+  background-size: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  &.active {
+    &:before {
+      animation-name: enableLight;
+      animation-duration: $ballRollingDurration;
+      animation-iteration-count: infinite;
+    }
+    #game-balls>li {
+      transform: translateX(-250px);
+      animation-name: ballRolling;
+      animation-duration: $ballRollingDurration;
+    }
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background-image: url(../../img/pages/game-room/balls-circle.svg);
+    background-size: 100%;
+    margin: auto;
+    z-index: 1;
+  }
+}
+
+#game-balls {
+  display: block;
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  li {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 60px;
+    font-weight: bold;
+    color: #236b89;
+    background-color: #fff;
+    background-image: radial-gradient(ellipse at center, #FFF 50%, #ddd 62%, #aaa 70%);
+    box-shadow: inset -25px -25px 40px rgba(0, 0, 0, .2);
+  }
+}
+
+@keyframes ballRolling {
+  0% { transform: translateX(250px); }
+  33% {
+    transform: translateX(0);
+  }
+  66% {
+    transform: translateX(0);
+  }
+  100% { transform: translateX(-250px); }
+}
+
+@keyframes enableLight {
+  0% {
+    box-shadow: none;
+  }
+  33% {
+    box-shadow: none;
+  }
+  66% {
+    box-shadow: rgba(236,197,14,.8) 0 0 140px;
+  }
+  100% {
+    box-shadow: none;
+  }
+}

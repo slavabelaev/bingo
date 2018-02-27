@@ -7,16 +7,17 @@ $ballRollingDurration: 3s;
   background-repeat: no-repeat;
   &.active {
     &:before {
-      animation-name: enableLight;
-      animation-duration: $ballRollingDurration;
-      animation-iteration-count: infinite;
+      animation: enableLight $ballRollingDurration linear infinite;
+    }
+    &:after {
+      animation: enableOpacity $ballRollingDurration linear infinite;
     }
     #game-balls>li {
       transform: translateX(-250px);
-      animation-name: ballRolling;
-      animation-duration: $ballRollingDurration;
+      animation: ballRolling $ballRollingDurration linear;
     }
   }
+  &:after,
   &:before {
     content: "";
     position: absolute;
@@ -27,11 +28,17 @@ $ballRollingDurration: 3s;
     width: 260px;
     height: 260px;
     border-radius: 50%;
-    background-image: url(../../img/pages/game-room/balls-circle.svg);
+    background-image:
+      url(../../img/pages/game-room/balls-circle.svg);
     background-size: 100%;
     margin: auto;
     z-index: 1;
   }
+  &:after {
+    background-image:
+      url(../../img/pages/game-room/balls-circle_closed.svg);
+  }
+
 }
 
 #game-balls {
@@ -54,6 +61,7 @@ $ballRollingDurration: 3s;
     right: 0;
     top: 0;
     bottom: 0;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,8 +70,16 @@ $ballRollingDurration: 3s;
     font-weight: bold;
     color: #236b89;
     background-color: #fff;
-    background-image: radial-gradient(ellipse at center, #FFF 50%, #ddd 62%, #aaa 70%);
-    box-shadow: inset -25px -25px 40px rgba(0, 0, 0, .2);
+    box-shadow:
+      inset -25px -25px 40px rgba(21, 37, 39, .3),
+      inset 0 0 40px rgba(21, 37, 39, .9),
+      0 0 40px rgba(21, 37, 39, .5);
+    span {
+      display: flex;
+      justify-content: center;
+      min-width: 200px;
+      animation: ballTextRolling $ballRollingDurration linear infinite;
+    }
   }
 }
 
@@ -78,6 +94,13 @@ $ballRollingDurration: 3s;
   100% { transform: translateX(-250px); }
 }
 
+@keyframes ballTextRolling {
+  0% { transform: translateX(200px) scale(.8); }
+  33% { transform: translateX(0px) scale(1); }
+  66% { transform: translateX(0px) scale(1); }
+  100% { transform: translateX(-200px) scale(.8); }
+}
+
 @keyframes enableLight {
   0% {
     box-shadow: none;
@@ -90,5 +113,19 @@ $ballRollingDurration: 3s;
   }
   100% {
     box-shadow: none;
+  }
+}
+@keyframes enableOpacity {
+  0% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

@@ -22,7 +22,11 @@ window.onload = function() {
                     .addClass('active');
                 console.log('Generated random number: ', randomNumber);
                 currentGameBalls
-                    .append('<li>' + randomNumber + '</li>');
+                    .append('<li>' +
+                        '<span>' + randomNumber + '</span>' +
+                        '<span>' + randomNumber + '</span>' +
+                        '<span>' + randomNumber + '</span>' +
+                        '</li>');
             }, 3000);
         };
     })(jQuery);

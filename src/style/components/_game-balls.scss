@@ -1,85 +1,53 @@
-$ballRollingDurration: 3s;
+@import "../mixins/element-in-circle";
+
+$ballRollingDurration: 1s;
 
 #game-balls-container {
   background-image: url(../../img/pages/game-room/balls-circle-bg.svg);
   background-size: 400px;
   background-position: center;
   background-repeat: no-repeat;
-  &.active {
-    &:before {
-      animation: enableLight $ballRollingDurration linear infinite;
-    }
-    &:after {
-      animation: enableOpacity $ballRollingDurration linear infinite;
-    }
-    #game-balls>li {
-      transform: translateX(-250px);
-      animation: ballRolling $ballRollingDurration linear;
-    }
-  }
-  &:after,
-  &:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    background-image:
-      url(../../img/pages/game-room/balls-circle.svg);
-    background-size: 100%;
-    margin: auto;
-    z-index: 1;
-  }
-  &:after {
-    background-image:
-      url(../../img/pages/game-room/balls-circle_closed.svg);
-  }
-
 }
 
-#game-balls {
-  display: block;
+#list-of-circle-balls {
+  @include elements-in-circle($item-count: 16, $circle-size: 270px, $item-size: 25px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 40px rgba(21, 37, 39, .8);
+}
+
+#current-game-ball {
   list-style: none;
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   margin: auto;
+  overflow: hidden;
+  border-radius: 50%;
   width: 200px;
   height: 200px;
-  border-radius: 50%;
-  overflow: hidden;
-  li {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    overflow: hidden;
+  font-size: 60px;
+  font-weight: bold;
+  color: #236b89;
+  background-color: #fff;
+  background-image: radial-gradient(circle farthest-side at 50px 50px,#fff 0%, #eee 99.9%);
+  box-shadow:
+    inset -25px -25px 40px rgba(21, 37, 39, .2),
+    inset 0 0 40px rgba(21, 37, 39, .8),
+    0 0 40px rgba(21, 37, 39, .2);
+  span {
     display: flex;
-    align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    font-size: 60px;
-    font-weight: bold;
-    color: #236b89;
-    background-color: #fff;
-    box-shadow:
-      inset -25px -25px 40px rgba(21, 37, 39, .3),
-      inset 0 0 40px rgba(21, 37, 39, .9),
-      0 0 40px rgba(21, 37, 39, .5);
-    span {
-      display: flex;
-      justify-content: center;
-      min-width: 200px;
-      animation: ballTextRolling $ballRollingDurration linear infinite;
-    }
+    min-width: 200px;
+    transform: translateX(200px);
+    animation: ballTextRolling $ballRollingDurration linear infinite;
   }
 }
 
@@ -95,10 +63,9 @@ $ballRollingDurration: 3s;
 }
 
 @keyframes ballTextRolling {
-  0% { transform: translateX(200px) scale(.8); }
-  33% { transform: translateX(0px) scale(1); }
-  66% { transform: translateX(0px) scale(1); }
-  100% { transform: translateX(-200px) scale(.8); }
+  0% { transform: translateX(150px) rotate3d(0, 1, 0, -90deg); }
+  50% { transform: translateX(0px); }
+  100% { transform: translateX(-150px) rotate3d(0, 1, 0, 90deg); }
 }
 
 @keyframes enableLight {

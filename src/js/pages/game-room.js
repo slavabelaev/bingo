@@ -4,7 +4,8 @@ window.onload = function() {
         var ballRollingInterval,
             gameBallsContainer = $('#game-balls-container'),
             listOfNumbersElement = $('#number-caller-board__list-of-numbers'),
-            currentGameBalls = gameBallsContainer.find('#game-balls');
+            currentGameBallElement = gameBallsContainer.find('#current-game-ball'),
+            listOfCircleBallsElement = gameBallsContainer.find('#list-of-circle-balls');
 
         window.noBallRolling = function() {
             clearInterval(ballRollingInterval);
@@ -15,21 +16,16 @@ window.onload = function() {
             ballRollingInterval = setInterval(function() {
                 var randomNumber = parseInt(Math.random() * 90 + 1);
                 listOfNumbersElement
-                    .find('li.active')
-                    .removeClass('active');
-                listOfNumbersElement
                     .find('li[data-number="' + randomNumber + '"]')
                     .addClass('active');
                 console.log('Generated random number: ', randomNumber);
-                currentGameBalls
-                    .append('<li>' +
-                        '<span>' + randomNumber + '</span>' +
-                        '<span>' + randomNumber + '</span>' +
-                        '<span>' + randomNumber + '</span>' +
-                        '</li>');
-            }, 3000);
+
+                // Finding empty cell
+                currentGameBallElement.empty().append('<span>' + randomNumber + '</span>');
+                listOfCircleBallsElement.find('li:empty:eq(0)').text(randomNumber);
+            }, 1000);
         };
     })(jQuery);
 
-    window.startBallRolling();
+    //window.startBallRolling();
 };

@@ -1,7 +1,7 @@
 window.onload = function() {
 
     (function() {
-        var ballRollingIntervalTime = 1000,
+        var timeBetweenBalls = 1000,
             ballRollingDelay = 16 * 153,
             ballRollingInterval,
             gameContainer = $('#main'),
@@ -33,7 +33,7 @@ window.onload = function() {
 
             setTimeout(function() {
                 generateBall();
-                ballRollingInterval = setInterval(generateBall, ballRollingIntervalTime);
+                ballRollingInterval = setInterval(generateBall, timeBetweenBalls);
             }, ballRollingDelay);
         };
     })(jQuery);

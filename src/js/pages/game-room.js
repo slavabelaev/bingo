@@ -1,31 +1,42 @@
 window.onload = function() {
 
     (function() {
-        var ballRollingInterval,
-            gameBallsContainer = $('#game-balls-container'),
+        var ballRollingIntervalTime = 1000,
+            ballRollingDelay = 16 * 153,
+            ballRollingInterval,
+            gameContainer = $('#main'),
             listOfNumbersElement = $('#number-caller-board__list-of-numbers'),
-            currentGameBallElement = gameBallsContainer.find('#current-game-ball'),
-            listOfCircleBallsElement = gameBallsContainer.find('#list-of-circle-balls');
+            currentGameBallElement = gameContainer.find('#current-game-ball');
+
+        function generateBall() {
+            var randomNumber = parseInt(Math.random() * 90 + 1),
+                appendedNumberElement = $('<span>' + randomNumber + '</span>');
+
+            listOfNumbersElement
+                .find('li[data-number="' + randomNumber + '"]')
+                .addClass('selected');
+            //console.log('Generated random number: ', randomNumber);
+
+            // Finding empty cell
+            currentGameBallElement.empty().append(appendedNumberElement);
+        }
 
         window.noBallRolling = function() {
+            gameContainer.attr('data-game-in-progress', false);
+
             clearInterval(ballRollingInterval);
-            gameBallsContainer.removeClass('active');
         };
         window.startBallRolling = function() {
-            gameBallsContainer.addClass('active');
-            ballRollingInterval = setInterval(function() {
-                var randomNumber = parseInt(Math.random() * 90 + 1);
-                listOfNumbersElement
-                    .find('li[data-number="' + randomNumber + '"]')
-                    .addClass('active');
-                console.log('Generated random number: ', randomNumber);
+            gameContainer.attr('data-game-in-progress', true);
 
-                // Finding empty cell
-                currentGameBallElement.empty().append('<span>' + randomNumber + '</span>');
-                listOfCircleBallsElement.find('li:empty:eq(0)').text(randomNumber);
-            }, 1000);
+
+
+            setTimeout(function() {
+                generateBall();
+                ballRollingInterval = setInterval(generateBall, ballRollingIntervalTime);
+            }, ballRollingDelay);
         };
     })(jQuery);
 
-    //window.startBallRolling();
+    window.startBallRolling();
 };

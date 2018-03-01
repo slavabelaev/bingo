@@ -211,7 +211,7 @@
     <!-- /Header -->
     <!-- Page content -->
     <script src="js/pages/game-room.js"></script>
-    <main id="main">
+    <main id="main" data-game-in-progress="false">
         <div class="container">
             <ul id="price-list" class="row">
                 <li class="col-6 col-sm-4 col-lg-2"><a href="#">1. Çinko&nbsp;<span class="price-list__price">40₺</span></a></li>
@@ -246,7 +246,7 @@
                         <li data-number="19">19</li>
                         <li data-number="20">20</li>
                         <li data-number="21">21</li>
-                        <li data-number="22" class="active">22</li>
+                        <li data-number="22" class="selected">22</li>
                         <li data-number="23">23</li>
                         <li data-number="24">24</li>
                         <li data-number="25">25</li>
@@ -318,27 +318,25 @@
                     </ol>
                 </div>
                 <div id="game-balls-container" class="col-lg-6 col-xl-5">
-                    <ol id="list-of-circle-balls">
-                        <li data-number-place="1">1</li>
-                        <li data-number-place="2">2</li>
-                        <li data-number-place="3">3</li>
-                        <li data-number-place="4"></li>
-                        <li data-number-place="5"></li>
-                        <li data-number-place="6"></li>
-                        <li data-number-place="7"></li>
-                        <li data-number-place="8"></li>
-                        <li data-number-place="9"></li>
-                        <li data-number-place="10"></li>
-                        <li data-number-place="11"></li>
-                        <li data-number-place="12"></li>
-                        <li data-number-place="13"></li>
-                        <li data-number-place="14"></li>
-                        <li data-number-place="15"></li>
-                        <li data-number-place="16"></li>
+                    <ol id="list-of-circle-lights">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
                     </ol>
-                    <div id="current-game-ball">
-                        <span>22</span>
-                    </div>
+                    <div id="current-game-ball"></div>
                 </div>
             </div>
 

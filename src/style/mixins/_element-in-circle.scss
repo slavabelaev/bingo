@@ -11,6 +11,13 @@
   top: 0;
   bottom: 0;
   margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    rgba(236,197,14,.8) 0 0 140px,
+    0 0 40px rgba(21, 37, 39, .8) inset,
+    rgba(236,197,14,.8) 0 0 140px inset;
   border: $border-size solid #F2994A;
   width:  $circle-size;
   height: $circle-size;
@@ -19,7 +26,7 @@
   list-style: none;
   z-index: 5;
 
-  > * {
+  > li {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,11 +35,24 @@
     top:  50%;
     left: 50%;
     border-radius: 50%;
-    background-color: #fff;
     color: #236b89;
+    overflow: hidden;
+    font-size: .9rem;
+    background-color: #F2994A;
     width:  $item-size;
     height: $item-size;
     margin: -($item-size / 2);
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: $item-size;
+      height: $item-size;
+      border-radius: 50%;
+      background-color: #F2994A;
+    }
 
     $angle: (360 / $item-count);
     $rot: -90;
@@ -43,6 +63,12 @@
                 rotate($rot * 1deg)
                 translate($circle-size / 2 - $border-size / 2)
                 rotate($rot * -1deg);
+        transition-delay: $i * 153ms;
+
+        &:before {
+          transition: 153ms;
+          transition-delay: $i * 153ms;
+        }
       }
 
       $rot: $rot + $angle;

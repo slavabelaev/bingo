@@ -1,3 +1,17 @@
+#list-of-offers__informer {
+    display: none;
+    text-align: right;
+    margin-right: -15px;
+    margin-left: -15px;
+    .badge {
+        border-radius: 10px 0 0;
+        padding: 5px 10px;
+        .feather {
+            vertical-align: middle;
+        }
+    }
+}
+
 ul.list-of-offers {
     list-style: none;
     padding-left: 0;
@@ -69,6 +83,9 @@ ul.list-of-offers {
             position: relative;
             padding: 10px 20px;
             flex: 1;
+            .price-list__item__price {
+                white-space: nowrap;
+            }
             &:not(:last-child):before {
                 content: "";
                 position: absolute;
@@ -107,6 +124,7 @@ ul.list-of-offers {
 
 @media (max-width: 767px) {
     ul.list-of-offers {
+        position: relative;
         margin-bottom: 20px;
         &.row {
             flex-wrap: nowrap;
@@ -118,27 +136,35 @@ ul.list-of-offers {
 				padding: 0 6px;
             }
         }
-        &>li:first-child>.offer-item {
-            position: relative;
-            &:after {
-                content: "more rooms";
-                position: absolute;
-                display: flex;
-                align-items: center;
-                line-height: 1;
-                background-image: url(../../img/icons/arrow-right.svg);
-                background-repeat: no-repeat;
-                background-position: 95% center;
-                background-size: 18px;
-                background-color: #ecc927;
-                padding: 8px 10px;
-                padding-right: 25px;
-                border-radius: 8px 0 0 0;
-			    right: 0;
-			    bottom: 62px;
-                z-index: 1;
-                font-size: 0.875rem;
-            }
+
+        &:before {
+            display: flex;
+            align-items: center;
+            line-height: 1;
+            background-image: url(../../img/icons/arrow-right.svg);
+            background-repeat: no-repeat;
+            background-position: 95% center;
+            background-size: 18px;
+            background-color: #ecc927;
+            padding: 8px 10px;
+            padding-right: 25px;
+            border-radius: 8px 0 0 0;
+            right: 0;
+            top: -30px;
+            z-index: 1;
+            font-size: 0.875rem;
+        }
+    }
+
+    #list-of-offers__informer {
+        display: block;
+    }
+}
+
+@media (max-width: 374px) {
+    .offer-item {
+        .offer-item__price-list>li {
+            padding: 10px 0;
         }
     }
 }

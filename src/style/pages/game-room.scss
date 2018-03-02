@@ -165,7 +165,7 @@
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   #price-list a {
     min-height: 3rem;
   }
@@ -174,6 +174,9 @@
   }
   #number-caller-board__list-of-numbers li {
     margin: 4px;
+  }
+  #price-list>li:nth-child(3)>a {
+    border-right-width: 0;
   }
 }
 
@@ -195,6 +198,13 @@
         padding: 6px;
       }
     }
+  }
+}
+
+@media (max-width: 575px) {
+  #price-list>li:nth-child(2)>a,
+  #price-list>li:nth-child(4)>a {
+    border-right-width: 0;
   }
 }
 

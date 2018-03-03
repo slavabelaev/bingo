@@ -215,61 +215,167 @@
                 <nav id="account-navbar-container" class="navbar navbar-light">
                     <div class="navbar-text">Cep Bank ile yatırımınızda Canlı Destekten bilgi alın</div>
                     <nav id="account-navbar">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#"><i data-icon="smartphone"></i>Cep Bank</a>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active"
+                                   id="cep-bank-tab"
+                                   data-toggle="tab"
+                                   href="#cep-bank"
+                                   role="tab"
+                                   aria-controls="cep-bank"
+                                   aria-selected="true"><i data-icon="smartphone"></i>Cep Bank</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><i data-icon="bank"></i>Banka Havalesi</a>
+                                <a class="nav-link"
+                                   id="banka-havalesi-tab"
+                                   data-toggle="tab"
+                                   href="#banka-havalesi"
+                                   role="tab"
+                                   aria-controls="cep-bank"
+                                   aria-selected="true"><i data-icon="bank"></i>Banka Havalesi</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><i data-icon="credit-card"></i>Kredi Kartı</a>
+                                <a class="nav-link"
+                                   id="kredi-karti-tab"
+                                   data-toggle="tab"
+                                   href="#kredi-karti"
+                                   role="tab"
+                                   aria-controls="kredi-karti"
+                                   aria-selected="true"><i data-icon="credit-card"></i>Kredi Kartı</a>
                             </li>
                         </ul>
                     </nav>
                 </nav>
                 <section class="form-section">
-                    <div class="icon-container">
-                        <i data-icon="smartphone"></i>
-                    </div>
-                    <h1>Cep Bank ile yatırımınızda Canlı Destekten bilgi alın</h1>
-                    <form class="row" action="">
-                        <div class="col-md-6">
-                            <header>
-                                <h2>Lütfen Banka Seçiniz</h2>
-                                <p class="text-muted">There are many variations of passages of Lorem Ipsum available, but the majority have</p>
-                            </header>
-                            <div class="mb-4">
-                                <div class="form-group">
-                                    <select class="form-control form-control-lg" id="exampleFormControlSelect1">
-                                        <option>Garanti Bankası</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                    <form class="tab-content" action="">
+                        <div class="tab-pane fade show active" id="cep-bank" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="icon-container">
+                                <i data-icon="smartphone"></i>
+                            </div>
+                            <h2>Cep Bank ile yatırımınızda Canlı Destekten bilgi alın</h2>
+                            <div class="row controls-row">
+                                <div class="col-md-6">
+                                    <header>
+                                        <h3>Lütfen Banka Seçiniz</h3>
+                                        <p class="text-muted">There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                                    </header>
+                                    <div class="mb-4">
+                                        <div class="form-group">
+                                            <select class="form-control form-control-lg" id="exampleFormControlSelect1">
+                                                <option>Garanti Bankası</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <header>
+                                        <h3>Banka Bilgileri</h3>
+                                        <p class="text-muted">There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                                    </header>
+                                    <div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Alıcı TC Kimlik No">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-lg" id="exampleFormControlInput2" placeholder="Referans No">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-lg" id="exampleFormControlInput3" placeholder="Gönderilen Telefon Numarası">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-lg" id="exampleFormControlInput4" placeholder="Yatıralan Tutar TL">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-lg w-100">Gönder</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <header>
-                                <h2>Banka Bilgileri</h2>
-                                <p class="text-muted">There are many variations of passages of Lorem Ipsum available, but the majority have</p>
-                            </header>
-                            <div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Alıcı TC Kimlik No">
+                        <div class="tab-pane fade" id="banka-havalesi" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="icon-container">
+                                <i data-icon="bank"></i>
+                            </div>
+                            <h2>Cep Bank ile yatırımınızda Canlı Destekten bilgi alın</h2>
+                            <div class="row controls-row">
+                                <div class="col-md-6">
+                                    <header>
+                                        <h3>Lütfen Banka Seçiniz</h3>
+                                        <p class="text-muted">There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                                    </header>
+                                    <div class="mb-4">
+                                        <div class="form-group">
+                                            <select class="form-control form-control-lg" id="exampleFormControlSelect1">
+                                                <option>Garanti Bankası</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" id="exampleFormControlInput2" placeholder="Referans No">
+                                <div class="col-md-6">
+                                    <header>
+                                        <h3>Banka Bilgileri</h3>
+                                        <p class="text-muted">Havale ile ödeme yöntemi suan aktif değildir
+                                            <br>&nbsp;</p>
+                                    </header>
+                                    <div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Yatırılan Tutar">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-lg w-100">Gönder</button>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" id="exampleFormControlInput3" placeholder="Gönderilen Telefon Numarası">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="kredi-karti" role="tabpanel" aria-labelledby="contact-tab">
+                            <div class="icon-container">
+                                <i data-icon="coins"></i>
+                            </div>
+                            <h2>Hesap Sahibi : Richard34</h2>
+                            <div class="row controls-row">
+                                <div class="col-md-6">
+                                    <header>
+                                        <h3>Lütfen Banka Seçiniz</h3>
+                                        <p class="text-muted">There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                                    </header>
+                                    <div class="mb-4">
+                                        <div class="form-group">
+                                            <select class="form-control form-control-lg" id="exampleFormControlSelect1">
+                                                <option>Garanti Bankası</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" id="exampleFormControlInput4" placeholder="Yatıralan Tutar TL">
+                                <div class="col-md-6">
+                                    <header>
+                                        <h3>Banka Bilgileri</h3>
+                                        <p class="text-muted">There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                                    </header>
+                                    <div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Şube Kodu">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-lg" id="exampleFormControlInput2" placeholder="Hesap Numarası">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-lg" id="exampleFormControlInput3" placeholder="Iban">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-lg" id="exampleFormControlInput4" placeholder="Tutar">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-lg w-100">Para Çek</button>
+                                    </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-lg w-100">Gönder</button>
                             </div>
                         </div>
                     </form>

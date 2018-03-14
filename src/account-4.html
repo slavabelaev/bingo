@@ -14,7 +14,7 @@
     <!-- Forgot password -->
     <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <form class="modal-content" role="form" method="POST" action="/forgot-password">
                 <div class="modal-header">
                     <h5 class="modal-title" id="forgotPasswordLabel">Forgot password?</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -22,30 +22,30 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal" role="form" method="POST" action="/register">
+                    <div class="form-horizontal">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="forgot-password-email"><i data-feather="at-sign"></i></span>
                             </div>
-                            <input type="email" class="form-control" placeholder="Your email address" aria-label="Your email address" aria-describedby="forgot-password-email">
+                            <input type="email" class="form-control" required placeholder="Your email address" aria-label="Your email address" aria-describedby="forgot-password-email">
                         </div>
-                    </form>
+                    </div>
                     <div class="alert alert-danger" role="alert">
                         <i data-feather="alert-circle"></i> Error Message!
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">
                     <a href="#" data-toggle="modal" data-target="#loginModal" data-dismiss="modal">Login</a>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Reset Password</button>
+                    <button type="submit" class="btn btn-primary">Reset Password</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     <!-- /Forgot password -->
     <!-- Create account -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <form class="modal-content" role="form" method="POST" action="/register">
                 <div class="modal-header">
                     <h5 class="modal-title" id="loginModalLabel">Sign in to your account</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -53,36 +53,36 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal" role="form" method="POST" action="/register">
+                    <div class="form-horizontal">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="login-email"><i data-feather="at-sign"></i></span>
                             </div>
-                            <input type="email" class="form-control" placeholder="Your email address" aria-label="Your email address" aria-describedby="login-email">
+                            <input type="email" class="form-control" required placeholder="Your email address" aria-label="Your email address" aria-describedby="login-email">
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="login-password"><i data-feather="lock"></i></span>
                             </div>
-                            <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="login-password">
+                            <input type="password" class="form-control" required placeholder="Password" aria-label="Password" aria-describedby="login-password">
                         </div>
-                    </form>
+                    </div>
                     <div class="alert alert-danger" role="alert">
                         <i data-feather="alert-circle"></i> Error Message!
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">
                     <a href="#" data-toggle="modal" data-target="#forgotPasswordModal" data-dismiss="modal">Forgot password?</a>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Login</button>
+                    <button type="submit" class="btn btn-primary">Login</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     <!-- /Create account -->
     <!-- Login -->
     <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <form class="modal-content" role="form" method="POST" action="/create-account">
                 <div class="modal-header">
                     <h5 class="modal-title" id="registerModalLabel">Creating Account</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -90,31 +90,31 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal" role="form" method="POST" action="/register">
+                    <div class="form-horizontal">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="email"><i data-feather="at-sign"></i></span>
                             </div>
-                            <input type="email" class="form-control" placeholder="Your email address" aria-label="Your email address" aria-describedby="email">
+                            <input type="email" class="form-control" required placeholder="Your email address" aria-label="Your email address" aria-describedby="email">
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="password"><i data-feather="lock"></i></span>
                             </div>
-                            <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password">
+                            <input type="password" class="form-control" required placeholder="Password" aria-label="Password" aria-describedby="password">
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="user"><i data-feather="user"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="First name">
-                            <input type="text" class="form-control" placeholder="Last name">
+                            <input type="text" class="form-control" required placeholder="First name">
+                            <input type="text" class="form-control" required placeholder="Last name">
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="date"><i data-feather="calendar"></i></span>
                             </div>
-                            <input type="date" class="form-control" placeholder="Birth date" aria-label="Birth date" aria-describedby="date">
+                            <input type="date" class="form-control" required placeholder="Birth date" aria-label="Birth date" aria-describedby="date">
                         </div>
                         <div class="d-flex mb-3">
                             <div class="custom-control custom-radio custom-control-inline">
@@ -130,30 +130,30 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="user-location"><i data-feather="map-pin"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Coutry">
-                            <input type="text" class="form-control" placeholder="City">
-                            <input type="text" class="form-control" placeholder="Postcode">
+                            <input type="text" class="form-control" required placeholder="Coutry">
+                            <input type="text" class="form-control" required placeholder="City">
+                            <input type="text" class="form-control" required placeholder="Postcode">
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="phone-number"><i data-feather="smartphone"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Phone number" aria-label="Phone number" aria-describedby="phone-number">
+                            <input type="tel" class="form-control" required placeholder="Phone number" aria-label="Phone number" aria-describedby="phone-number">
                         </div>
                         <div class="custom-control custom-checkbox mb-3">
                             <input type="checkbox" class="custom-control-input" id="terms-and-policy">
                             <label class="custom-control-label" for="terms-and-policy">I am over 18 years old and have read and accept the
                                 <a href="/terms-and-conditions">Terms and Conditions</a> and <a href="/privacy-policy" class="">Privacy Policy</a></label>
                         </div>
-                    </form>
+                    </div>
                     <div class="alert alert-danger" role="alert">
                         <i data-feather="alert-circle"></i> Error Message!
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i data-feather="check"></i> Create Account</button>
+                    <button type="submit" class="btn btn-primary"><i data-feather="check"></i> Create Account</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     <!-- /Login -->
@@ -221,16 +221,16 @@
                             </header>
                             <div class="form-control-container mb-4">
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Adınız Soyadınız">
+                                    <input type="text" class="form-control form-control-lg" required id="exampleFormControlInput1" placeholder="Adınız Soyadınız">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" id="exampleFormControlInput2" placeholder="Kullanıcı Adı">
+                                    <input type="text" class="form-control form-control-lg" required id="exampleFormControlInput2" placeholder="Kullanıcı Adı">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" id="exampleFormControlInput3" placeholder="E-Posta Adresiniz">
+                                    <input type="email" class="form-control form-control-lg" required id="exampleFormControlInput3" placeholder="E-Posta Adresiniz">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" id="exampleFormControlInput4" placeholder="Şifreniz">
+                                    <input type="password" class="form-control form-control-lg" required id="exampleFormControlInput4" placeholder="Şifreniz">
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-lg w-100">Hemen Üye Ol</button>
                             </div>
@@ -242,10 +242,10 @@
                             </header>
                             <div class="form-control-container mb-2">
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" id="exampleFormControlInput5" placeholder="Adınız Soyadınız">
+                                    <input type="text" class="form-control form-control-lg" required id="exampleFormControlInput5" placeholder="Adınız Soyadınız">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" id="exampleFormControlInput6" placeholder="Şifreniz">
+                                    <input type="password" class="form-control form-control-lg" required id="exampleFormControlInput6" placeholder="Şifreniz">
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-lg w-100">Giriş Yap</button>
                             </div>

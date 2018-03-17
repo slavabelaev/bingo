@@ -129,10 +129,11 @@ ul.list-of-offers {
         &.row {
             flex-wrap: nowrap;
             overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
         	margin-left: -15px;
    			margin-right: -15px;
             &>li {
-                min-width: calc(80vw);
+                min-width: calc(95vw);
 				padding: 0 6px;
             }
         }

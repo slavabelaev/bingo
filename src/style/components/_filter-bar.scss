@@ -66,16 +66,17 @@ div#filter-view {
             max-width: initial;
             width: initial;
         }
+        #filter-by-tags {
+            flex-wrap: wrap;
+            margin-bottom: 0;
+            &>.btn {
+                margin-bottom: 5px;
+                flex: 1 calc(50% - 8px);
+            }
+        }
     }
     #filter-view {
         justify-content: center;
         order: 1;
-    }
-    div#filter-by-tags {
-        flex-wrap: wrap;
-        margin-bottom: 0;
-        &>.btn {
-            margin-bottom: 5px;
-        }
     }
 }

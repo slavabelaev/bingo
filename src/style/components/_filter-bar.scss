@@ -69,6 +69,8 @@ div#filter-view {
         #filter-by-tags {
             flex-wrap: wrap;
             margin-bottom: 0;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
             &>.btn {
                 margin-bottom: 5px;
                 flex: 1 calc(50% - 8px);

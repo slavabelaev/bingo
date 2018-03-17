@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bingo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/pages/index.css">
+</head>
+
+<body>
+    <!-- If not authorized -->
+    <!-- Forgot password -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form class="modal-content" role="form" method="POST" action="/forgot-password">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="forgotPasswordLabel">Forgot password?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="forgot-password-email"><i data-feather="at-sign"></i></span>
+                            </div>
+                            <input type="email" class="form-control" required placeholder="Your email address" aria-label="Your email address" aria-describedby="forgot-password-email">
+                        </div>
+                    </div>
+                    <div class="alert alert-danger" role="alert">
+                        <i data-feather="alert-circle"></i> Error Message!
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <a href="#" data-toggle="modal" data-target="#loginModal" data-dismiss="modal">Login</a>
+                    <button type="submit" class="btn btn-primary">Reset Password</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- /Forgot password -->
+    <!-- Create account -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form class="modal-content" role="form" method="POST" action="/register">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Sign in to your account</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="login-email"><i data-feather="at-sign"></i></span>
+                            </div>
+                            <input type="email" class="form-control" required placeholder="Your email address" aria-label="Your email address" aria-describedby="login-email">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="login-password"><i data-feather="lock"></i></span>
+                            </div>
+                            <input type="password" class="form-control" required placeholder="Password" aria-label="Password" aria-describedby="login-password">
+                        </div>
+                    </div>
+                    <div class="alert alert-danger" role="alert">
+                        <i data-feather="alert-circle"></i> Error Message!
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <a href="#" data-toggle="modal" data-target="#forgotPasswordModal" data-dismiss="modal">Forgot password?</a>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- /Create account -->
+    <!-- Login -->
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form class="modal-content" role="form" method="POST" action="/create-account">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Creating Account</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="email"><i data-feather="at-sign"></i></span>
+                            </div>
+                            <input type="email" class="form-control" required placeholder="Your email address" aria-label="Your email address" aria-describedby="email">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="password"><i data-feather="lock"></i></span>
+                            </div>
+                            <input type="password" class="form-control" required placeholder="Password" aria-label="Password" aria-describedby="password">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="user"><i data-feather="user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" required placeholder="First name">
+                            <input type="text" class="form-control" required placeholder="Last name">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="date"><i data-feather="calendar"></i></span>
+                            </div>
+                            <input type="date" class="form-control" required placeholder="Birth date" aria-label="Birth date" aria-describedby="date">
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="sex_male" name="sex" checked class="custom-control-input">
+                                <label class="custom-control-label" for="sex_male">Male</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="sex_female" name="sex" class="custom-control-input">
+                                <label class="custom-control-label" for="sex_female">Female</label>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="user-location"><i data-feather="map-pin"></i></span>
+                            </div>
+                            <input type="text" class="form-control" required placeholder="Coutry">
+                            <input type="text" class="form-control" required placeholder="City">
+                            <input type="text" class="form-control" required placeholder="Postcode">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="phone-number"><i data-feather="smartphone"></i></span>
+                            </div>
+                            <input type="tel" class="form-control" required placeholder="Phone number" aria-label="Phone number" aria-describedby="phone-number">
+                        </div>
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="terms-and-policy">
+                            <label class="custom-control-label" for="terms-and-policy">I am over 18 years old and have read and accept the
+                                <a href="/terms-and-conditions">Terms and Conditions</a> and <a href="/privacy-policy" class="">Privacy Policy</a></label>
+                        </div>
+                    </div>
+                    <div class="alert alert-danger" role="alert">
+                        <i data-feather="alert-circle"></i> Error Message!
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary"><i data-feather="check"></i> Create Account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- /Login -->
+    <!-- /If not authorized -->
+    <!-- Header -->
+    <header id="header">
+        <nav id="info-bar__top" class="navbar navbar-expand-md navbar-light">
+            <div class="container d-flex">
+                <button class="navbar-toggler btn-secondary" data-toggle="sidenav" href="#main-sidenav">
+                    <i data-feather="menu"></i>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="img/logo@2x.png" alt=""></a>
+                <!-- If authorized (remove class — invisible) -->
+                <button class="navbar-toggler btn-secondary invisible" data-toggle="sidenav" href="#user-sidenav">
+                    <i data-feather="user"></i>
+                </button>
+                <!-- /If authorized -->
+                <!-- If authorized (remove class — d-none) -->
+                <div id="user-sidenav" class="sidenav sidenav_right d-none">
+                    <nav class="nav">
+                        <a class="btn btn-secondary">Nakit Para <span class="text-yellow">220. TL</span></a>
+                        <a class="btn btn-primary">Bonus Para <span class="text-green">3,320. TL</span></a>
+                    </nav>
+                </div>
+                <!-- /If authorized -->
+                <!-- If not authorized -->
+                <div id="authorization">
+                    <a class="btn btn-secondary" data-toggle="modal" data-target="#loginModal"><i data-feather="log-in"></i> Login</a>
+                    <a class="btn btn-primary" data-toggle="modal" data-target="#registerModal"><i data-feather="user-plus"></i> Create account</a>
+                </div>
+                <!-- /If not authorized -->
+            </div>
+        </nav>
+        <nav id="main-navigation" class="navbar navbar-expand-md navbar-dark">
+            <div class="container">
+                <div class="sidenav" id="main-sidenav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#"><i data-icon="home"></i>Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i data-icon="tl"></i>Nakit Islemleri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i data-feather="clock"></i>Gecmis Islemler</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- If authorized -->
+                <div id="user-navbar" class="d-none">
+                    <a href="#" class="nav-link"><i data-feather="log-out"></i>Richard34</a>
+                    <i data-icon="user"></i>
+                </div>
+                <!-- /If authorized -->
+            </div>
+        </nav>
+    </header>
+    <!-- /Header -->
+    <!-- Page content -->
+    <script src="js/pages/index.js" defer></script>
+    <main id="main">
+        <div id="carousel-wrapper">
+            <div class="container">
+                <div id="carousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel" data-slide-to="1"></li>
+                        <li data-target="#carousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" style="background-image: url(img/pages/index/carousel/carousel-item_1.png);">
+                            <div class="carousel-item__content">
+                                <h2 class="h1">Hemen üye olarak</h2>
+                                <p class="lead">diledigin odaya girebilir ve kazanma sansini
+                                    <br>kendin belirleyebilirsin.</p>
+                                <a href="" class="btn btn-primary btn-lg">Hemen Kayit Ol</a>
+                            </div>
+                        </div>
+                        <div class="carousel-item" style="background-image: url(img/pages/index/carousel/carousel-item_1.png);">
+                            <div class="carousel-item__content">
+                                <h2 class="h1">Hemen üye olarak</h2>
+                                <p class="lead">diledigin odaya girebilir ve kazanma sansini
+                                    <br>kendin belirleyebilirsin.</p>
+                                <a href="" class="btn btn-primary btn-lg">Hemen Kayit Ol</a>
+                            </div>
+                        </div>
+                        <div class="carousel-item" style="background-image: url(img/pages/index/carousel/carousel-item_1.png);">
+                            <div class="carousel-item__content">
+                                <h2 class="h1">Hemen üye olarak</h2>
+                                <p class="lead">diledigin odaya girebilir ve kazanma sansini
+                                    <br>kendin belirleyebilirsin.</p>
+                                <a href="" class="btn btn-primary btn-lg">Hemen Kayit Ol</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="info-bar">
+            <div class="container">
+                <ul class="row">
+                    <li class="col-md-6 col-xl-3">Online <span class="text-yellow">4,303</span> Kisi</li>
+                    <li class="col-md-6 col-xl-3"><span class="text-yellow">2,403</span> Masada Online</li>
+                    <li class="col-md-6 col-xl-3">Bugün <span class="text-orange">10.00 TL</span> Verildi</li>
+                    <li class="col-md-6 col-xl-3">Bu Ay <span class="text-blue">230,00 TL</span> Verildi</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <form id="filter-bar">
+                <div class="form-group">
+                    <select name="" class="form-control" required>
+                        <option value="">Tombola Odalar</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="" class="form-control" required>
+                        <option value="">Ucrete Göre</option>
+                    </select>
+                </div>
+                <div id="filter-view" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options" autocomplete="off" checked> <i data-feather="grid"></i>
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" autocomplete="off"> <i data-feather="list"></i>
+                    </label>
+                </div>
+                <div id="filter-by-tags" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options" autocomplete="off" checked> #kazananlar
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" autocomplete="off"> #zenginler
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" autocomplete="off"> #ozelgurup
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" autocomplete="off"> #bolbonus
+                    </label>
+                </div>
+            </form>
+
+            <div id="list-of-offers__informer">
+                <span class="badge badge-primary">More rooms <i data-feather="arrow-right"></i></span>
+            </div>
+
+            <ul class="list-of-offers row">
+                <!-- Repeated Item -->
+                <li class="col-md-6 col-xl-4">
+                    <figure class="offer-item" style="background-image: url(img/offers/offer-item__1.png);">
+                        <figcaption>
+                            <div class="offer-item__title">Kurtların Odası</div>
+                            <div class="offer-item__total-reward">1,260 ₺</div>
+                            <div class="offer-item__price">10₺</div>
+                            <ul class="offer-item__price-list">
+                                <li>
+                                    <div class="price-list__item__title">1. Çinko</div>
+                                    <div class="price-list__item__price">50 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">2. Çinko</div>
+                                    <div class="price-list__item__price">150 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">Tombala</div>
+                                    <div class="price-list__item__price">450 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">Tulum</div>
+                                    <div class="price-list__item__price">1,450 ₺</div>
+                                </li>
+                            </ul>
+                        </figcaption>
+                    </figure>
+                </li>
+                <!-- /Repeated Item -->
+                <li class="col-md-6 col-xl-4">
+                    <figure class="offer-item" style="background-image: url(img/offers/offer-item__2.png);">
+                        <figcaption>
+                            <div class="offer-item__title">Kazanlar Odası</div>
+                            <div class="offer-item__total-reward">1,260 ₺</div>
+                            <div class="offer-item__price">10₺</div>
+                            <ul class="offer-item__price-list">
+                                <li>
+                                    <div class="price-list__item__title">1. Çinko</div>
+                                    <div class="price-list__item__price">50 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">2. Çinko</div>
+                                    <div class="price-list__item__price">150 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">Tombala</div>
+                                    <div class="price-list__item__price">450 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">Tulum</div>
+                                    <div class="price-list__item__price">1,450 ₺</div>
+                                </li>
+                            </ul>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="col-md-6 col-xl-4">
+                    <figure class="offer-item" style="background-image: url(img/offers/offer-item__3.png);">
+                        <figcaption>
+                            <div class="offer-item__title">VIP Odası</div>
+                            <div class="offer-item__total-reward">1,260 ₺</div>
+                            <div class="offer-item__price">20₺</div>
+                            <ul class="offer-item__price-list">
+                                <li>
+                                    <div class="price-list__item__title">1. Çinko</div>
+                                    <div class="price-list__item__price">50 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">2. Çinko</div>
+                                    <div class="price-list__item__price">150 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">Tombala</div>
+                                    <div class="price-list__item__price">450 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">Tulum</div>
+                                    <div class="price-list__item__price">1,450 ₺</div>
+                                </li>
+                            </ul>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="col-md-6 col-xl-4">
+                    <figure class="offer-item" style="background-image: url(img/offers/offer-item__4.png);">
+                        <figcaption>
+                            <div class="offer-item__title">Ferarri Odası</div>
+                            <div class="offer-item__total-reward">1,260 ₺</div>
+                            <div class="offer-item__price">10₺</div>
+                            <ul class="offer-item__price-list">
+                                <li>
+                                    <div class="price-list__item__title">1. Çinko</div>
+                                    <div class="price-list__item__price">50 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">2. Çinko</div>
+                                    <div class="price-list__item__price">150 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">Tombala</div>
+                                    <div class="price-list__item__price">450 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">Tulum</div>
+                                    <div class="price-list__item__price">1,450 ₺</div>
+                                </li>
+                            </ul>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="col-md-6 col-xl-4">
+                    <figure class="offer-item" style="background-image: url(img/offers/offer-item__5.png);">
+                        <figcaption>
+                            <div class="offer-item__title">Spor Severler</div>
+                            <div class="offer-item__total-reward">1,260 ₺</div>
+                            <div class="offer-item__price">10₺</div>
+                            <ul class="offer-item__price-list">
+                                <li>
+                                    <div class="price-list__item__title">1. Çinko</div>
+                                    <div class="price-list__item__price">50 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">2. Çinko</div>
+                                    <div class="price-list__item__price">150 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">Tombala</div>
+                                    <div class="price-list__item__price">450 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">Tulum</div>
+                                    <div class="price-list__item__price">1,450 ₺</div>
+                                </li>
+                            </ul>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="col-md-6 col-xl-4">
+                    <figure class="offer-item" style="background-image: url(img/offers/offer-item__6.png);">
+                        <figcaption>
+                            <div class="offer-item__title">Eğlence</div>
+                            <div class="offer-item__total-reward">1,260 ₺</div>
+                            <div class="offer-item__price">10₺</div>
+                            <ul class="offer-item__price-list">
+                                <li>
+                                    <div class="price-list__item__title">1. Çinko</div>
+                                    <div class="price-list__item__price">50 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">2. Çinko</div>
+                                    <div class="price-list__item__price">150 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">Tombala</div>
+                                    <div class="price-list__item__price">450 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">Tulum</div>
+                                    <div class="price-list__item__price">1,450 ₺</div>
+                                </li>
+                            </ul>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="col-md-6 col-xl-4">
+                    <figure class="offer-item" style="background-image: url(img/offers/offer-item__7.png);">
+                        <figcaption>
+                            <div class="offer-item__title">Zenginler</div>
+                            <div class="offer-item__total-reward">1,260 ₺</div>
+                            <div class="offer-item__price">10₺</div>
+                            <ul class="offer-item__price-list">
+                                <li>
+                                    <div class="price-list__item__title">1. Çinko</div>
+                                    <div class="price-list__item__price">50 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">2. Çinko</div>
+                                    <div class="price-list__item__price">150 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">Tombala</div>
+                                    <div class="price-list__item__price">450 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">Tulum</div>
+                                    <div class="price-list__item__price">1,450 ₺</div>
+                                </li>
+                            </ul>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="col-md-6 col-xl-4">
+                    <figure class="offer-item" style="background-image: url(img/offers/offer-item__8.png);">
+                        <figcaption>
+                            <div class="offer-item__title">Kazanlar Odası</div>
+                            <div class="offer-item__total-reward">1,260 ₺</div>
+                            <div class="offer-item__price">10₺</div>
+                            <ul class="offer-item__price-list">
+                                <li>
+                                    <div class="price-list__item__title">1. Çinko</div>
+                                    <div class="price-list__item__price">50 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">2. Çinko</div>
+                                    <div class="price-list__item__price">150 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">Tombala</div>
+                                    <div class="price-list__item__price">450 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">Tulum</div>
+                                    <div class="price-list__item__price">1,450 ₺</div>
+                                </li>
+                            </ul>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="col-md-6 col-xl-4">
+                    <figure class="offer-item" style="background-image: url(img/offers/offer-item__9.png);">
+                        <figcaption>
+                            <div class="offer-item__title">VIP Odası</div>
+                            <div class="offer-item__total-reward">1,260 ₺</div>
+                            <div class="offer-item__price">10₺</div>
+                            <ul class="offer-item__price-list">
+                                <li>
+                                    <div class="price-list__item__title">1. Çinko</div>
+                                    <div class="price-list__item__price">50 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">2. Çinko</div>
+                                    <div class="price-list__item__price">150 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">Tombala</div>
+                                    <div class="price-list__item__price">450 ₺</div>
+                                </li>
+                                <li>
+                                    <div class="price-list__item__title">Tulum</div>
+                                    <div class="price-list__item__price">1,450 ₺</div>
+                                </li>
+                            </ul>
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <!-- Page content -->
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div id="footer__top">
+                <figure id="age-informer">
+                    <img src="img/+18.png" alt="+18">
+                    <figcaption>Tombala oynatarak kazandıran adres.
+                        <br>18 yaşından küçük bireylerin sitemize üye olması ve tombala oynaması yasaktır.</figcaption>
+                </figure>
+                <a class="footer-brand" href="#"><img src="img/logo@2x.png" alt=""></a>
+            </div>
+            <p>Nulla posuere ex eu scelerisque ultrices. Maecenas ultricies eget urna sit amet eleifend. Curabitur risus nisl, volutpat at fringilla at, rutrum vitae lorem. Nunc dignissim vestibulum metus, et bibendum enim finibus a. Aliquam nec urna ut felis tristique iaculis. Suspendisse vel accumsan nulla. Aliquam dictum justo ut urna semper sollicitudin. Suspendisse potenti.</p>
+            <p>Sed et posuere lectus. Aenean porta feugiat viverra. Sed ac purus imperdiet, aliquet velit venenatis, vulputate nibh. Quisque volutpat mauris dolor, non facilisis nisi aliquet sit amet. Praesent fringilla elementum lacus, quis aliquam risus ultricies sed. Integer arcu dui, volutpat in facilisis</p>
+        </div>
+    </footer>
+    <!-- /Footer -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/components/sidenav.js"></script>
+</body>
+
+</html>

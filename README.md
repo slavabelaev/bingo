@@ -7,3 +7,7 @@ https://belaevslava.github.io/bingo/build/account.html
 https://belaevslava.github.io/bingo/build/register.html
 - Game room
 https://belaevslava.github.io/bingo/build/game-room.html
+- Transitional processes
+https://belaevslava.github.io/bingo/build/transitional-processes.html
+- Cash transactions
+https://belaevslava.github.io/bingo/build/cash-transactions.html

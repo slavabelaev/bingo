@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     watch = require('gulp-watch'),
     prefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     rigger = require('gulp-rigger'),
@@ -24,7 +25,13 @@ var path = {
     },
     src: {
         html: 'src/*.html',
-        js: 'src/js/**/*.js',
+        js: [
+        	'node_modules/jquery/dist/jquery.min.js',
+        	'node_modules/jquery-touchswipe/jquery.touchSwipe.min.js',
+        	'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
+        	'node_modules/feather-icons/dist/feather.min.js',
+        	'src/js/**/*.js'
+    	],
         style: 'src/style/**/*.scss',
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*'
@@ -67,9 +74,10 @@ gulp.task('html:build', function () {
 gulp.task('js:build', function () {
     gulp.src(path.src.js) 
         .pipe(rigger()) 
-        .pipe(sourcemaps.init()) 
-        .pipe(uglify()) 
-        .pipe(sourcemaps.write()) 
+        //.pipe(sourcemaps.init()) 
+        .pipe(uglify())
+        .pipe(concat('bundle.min.js'))
+        //.pipe(sourcemaps.write()) 
         .pipe(gulp.dest(path.build.js))
         .pipe(reload({stream: true}));
 });

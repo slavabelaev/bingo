@@ -165,12 +165,12 @@
                 <button class="navbar-toggler btn-secondary" data-toggle="sidenav" href="#main-sidenav">
                     <i data-feather="menu"></i>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="img/logo@2x.png" alt=""></a>
+                <a class="navbar-brand" href="index.html"><img src="img/logo.svg" alt="Logo"></a>
                 <button class="navbar-toggler btn-secondary" data-toggle="sidenav" href="#user-sidenav">
                     <i data-feather="user"></i>
                 </button>
                 <!-- If authorized (remove class — d-none) -->
-                <div id="user-sidenav" class="sidenav sidenav_right">
+                <div id="user-sidenav" class="sidenav sidenav_right d-none">
                     <nav class="nav">
                         <a class="btn btn-secondary">Nakit Para <span class="text-yellow">220. TL</span></a>
                         <a class="btn btn-primary">Bonus Para <span class="text-green">3,320. TL</span></a>
@@ -178,7 +178,7 @@
                 </div>
                 <!-- /If authorized -->
                 <!-- If not authorized -->
-                <div id="authorization" class="d-none">
+                <div id="authorization">
                     <a class="btn btn-secondary" data-toggle="modal" data-target="#loginModal"><i data-feather="log-in"></i> Login</a>
                     <a class="btn btn-primary" data-toggle="modal" data-target="#registerModal"><i data-feather="user-plus"></i> Create account</a>
                 </div>
@@ -200,10 +200,12 @@
                         </li>
                     </ul>
                 </div>
-                <div id="user-navbar">
-                    <a href="#" class="nav-link"><i data-feather="log-out"></i>Richard34</a>
+                <!-- If authorized -->
+                <div id="user-navbar" class="d-none">
+                    <a href="account.html" class="nav-link"><i data-feather="log-out"></i>Richard34</a>
                     <i data-icon="user"></i>
                 </div>
+                <!-- /If authorized -->
             </div>
         </nav>
     </header>
@@ -249,7 +251,9 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-lg w-100">Giriş Yap</button>
                             </div>
-                            <p class="p-2">Şifremi Unuttum ?</p>
+                            <p class="p-2">
+                                <a href="#" data-toggle="modal" data-target="#forgotPasswordModal" data-dismiss="modal" class="text-dark">Şifremi Unuttum?</a>
+                            </p>
                         </div>
                     </form>
                 </section>
@@ -262,11 +266,11 @@
         <div class="container">
             <div id="footer__top">
                 <figure id="age-informer">
-                    <img src="img/+18.png" alt="+18">
+                    <img src="img/plus_18.svg" alt="+18">
                     <figcaption>Tombala oynatarak kazandıran adres.
                         <br>18 yaşından küçük bireylerin sitemize üye olması ve tombala oynaması yasaktır.</figcaption>
                 </figure>
-                <a class="footer-brand" href="#"><img src="img/logo@2x.png" alt=""></a>
+                <a class="footer-brand" href="#"><img src="img/logo.svg" alt="Logo"></a>
             </div>
             <p>Nulla posuere ex eu scelerisque ultrices. Maecenas ultricies eget urna sit amet eleifend. Curabitur risus nisl, volutpat at fringilla at, rutrum vitae lorem. Nunc dignissim vestibulum metus, et bibendum enim finibus a. Aliquam nec urna ut felis tristique iaculis. Suspendisse vel accumsan nulla. Aliquam dictum justo ut urna semper sollicitudin. Suspendisse potenti.</p>
             <p>Sed et posuere lectus. Aenean porta feugiat viverra. Sed ac purus imperdiet, aliquet velit venenatis, vulputate nibh. Quisque volutpat mauris dolor, non facilisis nisi aliquet sit amet. Praesent fringilla elementum lacus, quis aliquam risus ultricies sed. Integer arcu dui, volutpat in facilisis</p>

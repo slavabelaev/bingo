@@ -166,7 +166,8 @@
                     <i data-feather="menu"></i>
                 </button>
                 <a class="navbar-brand" href="index.html"><img src="img/logo.svg" alt="Logo"></a>
-                <button class="navbar-toggler btn-secondary" data-toggle="sidenav" href="#user-sidenav">
+                <!-- If authorized (remove class — invisible) -->
+                <button class="navbar-toggler btn-secondary invisible" data-toggle="sidenav" href="#user-sidenav">
                     <i data-feather="user"></i>
                 </button>
                 <!-- If authorized (remove class — d-none) -->
@@ -212,52 +213,50 @@
     <!-- /Header -->
     <!-- Page content -->
     <main id="main">
-        <div class="container">
-            <div class="bg-cream">
-                <section class="form-section">
-                    <form class="row controls-row" action="">
-                        <div class="col-md-6 has-border-right">
-                            <header>
-                                <h2>Hemen Kayıt Ol</h2>
-                                <p class="text-muted">There are many variations of passages of Lorem Ipsum available, but the majority have</p>
-                            </header>
-                            <div class="form-control-container mb-4">
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" required id="exampleFormControlInput1" placeholder="Adınız Soyadınız">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" required id="exampleFormControlInput2" placeholder="Kullanıcı Adı">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-lg" required id="exampleFormControlInput3" placeholder="E-Posta Adresiniz">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control form-control-lg" required id="exampleFormControlInput4" placeholder="Şifreniz">
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-lg w-100">Hemen Üye Ol</button>
+        <div class="container bg-cream">
+            <section class="form-section">
+                <form class="row controls-row" action="">
+                    <div class="col-md-6 has-border-right">
+                        <header>
+                            <h2>Hemen Kayıt Ol</h2>
+                            <p class="text-muted">There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                        </header>
+                        <div class="form-control-container mb-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-lg" required id="exampleFormControlInput1" placeholder="Adınız Soyadınız">
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <header>
-                                <h2>Giriş Yap</h2>
-                                <p class="text-muted">There are many variations of passages of Lorem Ipsum available, but the majority have</p>
-                            </header>
-                            <div class="form-control-container mb-2">
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" required id="exampleFormControlInput5" placeholder="Adınız Soyadınız">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control form-control-lg" required id="exampleFormControlInput6" placeholder="Şifreniz">
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-lg w-100">Giriş Yap</button>
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-lg" required id="exampleFormControlInput2" placeholder="Kullanıcı Adı">
                             </div>
-                            <p class="p-2">
-                                <a href="#" data-toggle="modal" data-target="#forgotPasswordModal" data-dismiss="modal" class="text-dark">Şifremi Unuttum?</a>
-                            </p>
+                            <div class="form-group">
+                                <input type="email" class="form-control form-control-lg" required id="exampleFormControlInput3" placeholder="E-Posta Adresiniz">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control form-control-lg" required id="exampleFormControlInput4" placeholder="Şifreniz">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100">Hemen Üye Ol</button>
                         </div>
-                    </form>
-                </section>
-            </div>
+                    </div>
+                    <div class="col-md-6">
+                        <header>
+                            <h2>Giriş Yap</h2>
+                            <p class="text-muted">There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                        </header>
+                        <div class="form-control-container mb-2">
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-lg" required id="exampleFormControlInput5" placeholder="Adınız Soyadınız">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control form-control-lg" required id="exampleFormControlInput6" placeholder="Şifreniz">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100">Giriş Yap</button>
+                        </div>
+                        <p class="p-2">
+                            <a href="#" data-toggle="modal" data-target="#forgotPasswordModal" data-dismiss="modal" class="text-dark">Şifremi Unuttum?</a>
+                        </p>
+                    </div>
+                </form>
+            </section>
         </div>
     </main>
     <!-- /Page content -->

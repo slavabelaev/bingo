@@ -1,0 +1,74 @@
+@media (max-width: 767px) {
+	#game-history-table {
+		background-color: transparent;
+		&,
+		&>tbody,
+		tr,
+		tr>td,
+		tr>th,
+		&>tbody>tr>td:before {
+			display: block;
+		}
+		&>thead {
+			display: none;
+		}
+		tbody {
+			tr {
+				display: flex;
+				flex-wrap: wrap;
+				margin-bottom: 1rem;
+				background-color: #fff;
+				border-radius: .25rem;
+				border: 1px solid #dee2e6;
+				overflow: hidden;
+				th,
+				td {
+					display: flex;
+					align-items: center;
+					flex: 100%;
+
+					&:before {
+						padding-right: 12px;
+						font-weight: 500;
+						color: #212529;
+					}
+				}
+				&>th:nth-child(1) {
+					border-top-width: 0;
+					background-color: rgba(20,38,39,.05);
+					justify-content: center;
+				}
+
+				&>th:nth-child(1):before { 
+					content: "SEANS:";
+				}
+				&>td:nth-child(2):before { 
+					content: "1. Çinko:";
+				}
+				&>td:nth-child(3):before { 
+					content: "2. Çinko:";
+				}
+				&>td:nth-child(4):before { 
+					content: "Tombala:";
+				}
+				&>td:nth-child(5):before { 
+					content: "Tulum:";
+				}
+
+				&>td:nth-child(2),
+				&>td:nth-child(3),
+				&>td:nth-child(4),
+				&>td:nth-child(5) {
+					display: flex;
+					flex: 50%;
+					justify-content: center;
+					font-size: 1.2rem;
+				}
+			}
+		}
+
+		.game-history__list-of-numbers li {
+			background-color: rgba(20,38,39,.05);
+		}
+	}
+}

@@ -1,7 +1,50 @@
 {
   "name": "bingo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Frontend for online lottery «Bingo»",
+  "homepage": "https://belaevslava.github.io/bingo/build/index.html",
+  "main": "gulpfile.js",
+  "previews": {
+    "directory": "previews",
+    "images": [
+      {
+        "path": "home.png",
+        "title": "Home"
+      },
+      {
+        "path": "create_account.png",
+        "title": "Create Account"
+      },
+      {
+        "path": "authorization.png",
+        "title": "Authorization"
+      },
+      {
+        "path": "payment_method_mobile.png",
+        "title": "Payment Method — Mobile"
+      },
+      {
+        "path": "payment_method_bank.png",
+        "title": "Payment Method — Bank"
+      },
+      {
+        "path": "payment_method_credit_card.png",
+        "title": "Payment Method — Credit Card"
+      },
+      {
+        "path": "game_room.png",
+        "title": "Game Room"
+      },
+      {
+        "path": "payments.png",
+        "title": "Payments"
+      },
+      {
+        "path": "history.png",
+        "title": "History"
+      }
+    ]
+  },
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

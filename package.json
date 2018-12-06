@@ -6,6 +6,9 @@
   "main": "gulpfile.js",
   "previews": {
     "directory": "previews",
+    "main": {
+    	"path": "/thumbs/home.png",
+    },
     "images": [
       {
         "path": "home.png",
@@ -50,7 +53,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "slav@belaev.pro",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.0.0",
